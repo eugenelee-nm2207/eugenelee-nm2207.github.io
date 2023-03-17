@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="css/appstyle.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script defer type="text/javascript" src="appscripts/main.js"></script> 
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head> 
+<body>
+    <div class="topNavBar" id="topNavBar">
+        <button type="button" class="navButton"><span class="material-icons">menu</span></button>
+        <img class="logo" id="themeLogo" src="resources/BlackpinkLogo.svg.png" onclick="themeChanger()">
+        <div class="miscNavBar">
+          <table class="miscNavBarTable">
+          <tr>
+            <td class="miscNavBarRow"><a href="../dataStory/index.html">Home Page</a></td>
+            <td class="miscNavBarRow"><a href="../dataStory/index.html">Data Story</a></td>
+            <td class="miscNavBarRow"><a href="../diary/diary.html">Diary</a></td>
+            <td class="miscNavBarRow"><a href="../diary/diary.html">Others</a></td>
+            <!--<td class="miscNavBarRow"><a href="test">Test 5</a></td>-->
+          </tr>
+        </table>
+      </div>
+    <div class="nav-overlay"></div>
+    <nav class="nav">
+        <a href="#headerTop" class="navLink"> Back to Top</a>
+        <a href="#headerIntroduction" class="navLink"> Introduction</a>
+        <a href="#headerPhysical" class="navLink"> Digital Success</a>
+        <a href="#headerPhysical" class="navLink"> Physical Sales</a>
+        <a href="#headerBranding" class="navLink"> Branding</a>
+        <a href="#headerDisucssion" class="navLink"> Discussion</a>
+        <!--<a href="#" class="navLink"> Nav item #5</a>-->
+    </nav>
+  
+    </div>
+<h1 id="headerTop" autofocus>
+<img src="resources/blackpink-background.jpg" id="themePicture" height=auto width=100%></h1>
+<h1>Kpop: Are Male Idols more likely<br> 
+  to be successful than Female Idols?</h1>
+<h2> An exploratory analysis using sales and other correlational data</h2>
+<p>
+  <br>
+  <h3 id="headerIntroduction">Introduction</h3>
+  <p>
+    Let's start with something simple: What is your gender?<br>
+      <button class="buttonSurvey" onclick="GenderRatio1()">Male</button>
+      <button class="buttonSurvey" onclick="GenderRatio2()">Female</button>
+      <button class="buttonSurvey" onclick="GenderRatio3()">Others</button><br>
+      <div id="ratioFact"> In his survey, Lafan (2020) conducted a survey on 1477 individuals who identified as Kpop-fans.</div>
+      <br> Note: In this section, I will also discuss some reasons why Male Kpop idols are assumed to do better in the market versus female Kpop idols.
+    </p>
+  <table id="fanRatioTable">
+    <tr><td>
+      <canvas id="myChart" width="400" height="350"></canvas>
+  </td></tr>
+</table>
+<br>
+<p>
+  <h3 id="headerDigital">Digital Success</h3>
+  Note: In this section, I will focus on the Kpop idols with the top Spotify streams and Youtube video views. I will use a bar chart to combine the two dimensions, and allow visualization by gender.
+  <br>Additionally, below is a sample of a Map plot which shows the % of female groups in the top 5 most popular Kpop artists (by Google searches) in 6 different countries.
+  <br><br><table id="fanRatioTable">
+    <tr><td><div id="googleSearchCountry"></div></td></tr>
+  </table>
+  Click to find out the top groups of each country: <br>
+  <button class="buttonSurvey">Australia</button>
+  <button class="buttonSurvey">Indonesia</button>
+  <button class="buttonSurvey">Japan</button>
+  <button class="buttonSurvey" onClick="printTopGroups()">Korea</button>
+  <button class="buttonSurvey">UK</button>
+  <button class="buttonSurvey"> USA</button><br>
+  <div id="topGroupList"></div>
+</p>
+<p>
+  <h3 id="headerPhysical">Physical Sales</h3>
+  Note: In this section, I will explain the significance of physical album sales for Kpop idols, and observe physical album sales data to see if male Kpop idols tend to sell more. I will use a bar chart that can toggle between male and female idols.
+</p>
+<p>
+  <h3 id="headerBranding">Branding</h3>
+  Note: In this section, I will observe the male:female ratio in the top ranking Kpop idols based on a Market Branding score, devised by Korean experts. I will probably use a scatter plot comparing score, with points for male and female idols coloured differently.
+</p>
+<p>
+  <h3 id="headerDisucssion">Discussion</h3>
+  Note: Here, I will consolidate my interpretations of the data and disucss the implications of my findings.
+</p>
+</body>
