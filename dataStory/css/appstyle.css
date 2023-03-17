@@ -1,0 +1,212 @@
+/* for interactive navigation bar 1 */
+
+/*html {
+    scroll-behavior: smooth;
+  }*/
+body {
+    background: palevioletred;
+    --topNavBar-height: 60px; /*declaring a CSS variable*/
+    /*margin: 0px;*/
+    margin-top: var(--topNavBar-height);/*give top row 60px of space and begin everything else underneath*/
+    font-family: Serif, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align:center;
+}
+p {
+    margin-left: 10%;
+    margin-right: 10%;
+} 
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 40px;
+}
+h2 {
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    text-decoration: underline;
+}
+h3 { /*these are my headers!*/
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+}
+h4, p {
+    text-align: center;
+    color: black;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.topNavBar {
+    position: fixed; /*top row exists even while user scrolls down*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--topNavBar-height); /* as top row class is within body, it can access the appearance variables such as topNavBar height*/
+    display: flex; /*flexbox to give nice column layout*/
+    background: black;
+}
+
+.logo {
+    height: 100%;
+    display: block; /*removes small space surrounding image*/
+    box-sizing: border-box; /*allows height to be 100% but ensures padding is part of the sizingg, so that logo does not exceed nav bar*/
+    padding: 8px;
+}
+
+.navButton {
+    width: var(--topNavBar-height);
+    height: 100%; /*stays within 60px topNavBar*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.navButton > span { /*styling Google Material Icons*/
+    color: pink;
+    font-size: calc(--topNavBar-height / 2); /*height based on navBar's height*/
+}
+
+.nav {
+    --nav-width: 300px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--nav-width);
+    height: 100vh; /*100% of viewport*/
+    background: black;
+    transform: translateX(calc(-1 * var(--nav-width))); /*move the panel -300 pixels to the left*/
+    transition: transform 0.25s;
+}
+
+.nav-open {
+    transform: translateX(0); /*resets value with nice smooth transition with the help of javascript*/
+}
+
+.navLink {
+    display: block;
+    font-family: sans-serif;
+    font-size: 24px;
+    padding: 24px;
+    text-decoration: none;
+    color: pink;
+}
+
+.navLink:not(:last-child) { 
+    border-bottom: 1px solid pink;
+}
+
+.navLink:hover { 
+    background: rgba(255,255,255,0.1); /*subtle highlight when hovering*/
+}
+
+.nav-overlay {
+    display: none; /*subtle black hue to only be displayed when nav bar is open*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.2);
+}
+
+.nav-overlay-open {
+    display: block; 
+}
+
+/* For misc nav bar*/
+
+/*li { to remove the bullet points
+    list-style: none;
+}*/
+
+a { /* to style the links and remove the underline*/
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+a:hover {
+    color:pink
+}
+
+.miscNavBar .dataLinks {
+    display: flex;
+    gap: 2rem; 
+}
+
+.miscNavBar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.miscNavBarTable {
+    width: 70%;
+    margin-left: left;
+    margin-right: auto;
+    text-align: center;
+}
+.miscNavBarRow {
+    border: 2px solid black;
+    border-radius:5px;
+}
+.miscNavBarRow:hover {
+    background-color: black;
+}
+
+/*not using container1 right now*/
+.container1 { /*from https://linuxhint.com/how-to-make-html-container-box-in-html/ */
+    display: grid;
+    grid-template-columns: auto auto;
+    /*background-color: #40966c;*/
+    padding: 15px;
+    gap:10px;
+}
+.container1>div {
+    /*background-color: #c4d1cb;*/
+    text-align: center;
+    padding: 20px auto;
+    font-size: 15px;
+}
+#fanRatioTable {
+    width:auto;
+    height: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.highlight {
+    background-color:black;
+    text-decoration: underline;
+    color: palevioletred;
+}
+.buttonSurvey {
+    border-radius: 9px;
+    background-color: black;
+    color: palevioletred;
+    font-size: 18px;
+    font-family: serif;
+}
+.buttonSurvey:hover {
+    background-color: pink;
+    color: black;
+}
+
+#googleSearchCountry {
+    align-items: center;
+}
