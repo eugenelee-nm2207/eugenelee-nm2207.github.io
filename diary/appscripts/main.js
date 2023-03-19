@@ -13,62 +13,26 @@ navOverlay.addEventListener("click", () => {
     navOverlay.classList.remove("nav-overlay-open");
 });
 
-//intro gender ratio pie chart
-const introFansData = {
-    labels: [
-      'Male',
-      'Female',
-      'Others',
-    ],
-    datasets: [{
-      label: 'Percentage',
-      data: [26.7, 70.2, 2.5],
-      backgroundColor: [
-        "pink", "black", "rgb(250,249,246)"],
-        //'rgb(255, 99, 132)',
-        //'rgb(54, 162, 235)',
-        //'rgb(255, 205, 86)',],
-      hoverOffset: 4
-    }]
-  };
-  new Chart("myChart",
-  {
-      type: "doughnut",
-      data: introFansData,
-      options: { 
-          maintainAspectRatio: false,
-          legend: {
-              display: true,
-              fontColor: "rgb(199,21,133)",
-          },
-          title: {
-              display: true,
-              text: ["Gender Ratio of Kpop Fans"],//set this to 'Number of female graduates','per Course'
-              fontFamily: "sans-serif",
-              fontSize: 20,
-              fontColor: "rgb(0,0,0)",
-          }
-      }
-  });
+// trying out theme changer
+let counter = 0;
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelector("themeLogo").onclick = themeChanger;
+});
 
-  function GenderRatio1() {
-    document.getElementById("ratioFact").innerHTML = "According to Lafan (2020), you would be among " +"<span class='highlight'>" + "26.7%" + "</span>" + " of Kpop fans.";
-  };
-  function GenderRatio2() {
-    document.getElementById("ratioFact").innerHTML = "According to Lafan (2020), you would be among " +"<span class='highlight'>" + "70.2%" + "</span>" + " of Kpop fans.";
+function themeChanger() {
+  counter++;
+  if (counter === 1) {
+    alert("Changed theme!");
+    document.getElementById("themeLogo").src="resources/twiceLogo.svg.png";
+    //document.getElementById("themePicture").src="resources/twice-background.jpg";
+    document.body.style.backgroundColor = "rgb(249, 197, 150)";
+    navBarColor = document.getElementById("topNavBar");
+  } else {
+    counter = counter-2;
+    alert("Changed theme!");
+    document.getElementById("themeLogo").src="resources/BlackpinkLogo.svg.png";
+    //document.getElementById("themePicture").src="resources/blackpink-background.jpg";
+    document.body.style.backgroundColor = "palevioletred";
   }
-  function GenderRatio3() {
-    document.getElementById("ratioFact").innerHTML = "According to Lafan (2020), you would be among " +"<span class='highlight'>" + "2.50%" + "</span>" + " of Kpop fans.";
-  }
+}
 
-  /*function addGenderRatioData(){
-    const newDataset = {
-      label: 'Percentage',
-      data: [26.7, 70.2, 2.5],
-      backgroundColor:['rgb(255, 99, 132)', 'rgb(54, 162, 235)','rgb(255, 205, 86)'],
-      hoverOffset: 4,
-    };
-    introFansData.datasets.data.push(newDataset);
-    introFansData.update();
-  };*/
- 

@@ -35,6 +35,9 @@ h4 {
     text-align: center;
     color: black;
 }
+.documentation {
+    border: 5px solid #555;
+}
 
 img {
     max-width: 100%;
@@ -129,7 +132,12 @@ img {
     list-style: none;
 }*/
 
-a { /* to style the links and remove the underline*/
+.directoryLinks {/* to style the links and remove the underline*/
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+a { 
     text-decoration: underline;
     color: #fff;
     font-size: 20px;
