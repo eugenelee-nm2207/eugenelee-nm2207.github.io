@@ -210,3 +210,10 @@ a:hover {
 #googleSearchCountry {
     align-items: center;
 }
+.apa-reference {
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-left: 36px;
+    text-indent: -36px;
+    text-align: left;
+}

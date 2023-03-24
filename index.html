@@ -12,14 +12,14 @@
 <body>
     <div class="topNavBar" id="topNavBar">
         <button type="button" class="navButton"><span class="material-icons">menu</span></button>
-        <img class="logo" id="themeLogo" src="resources/BlackpinkLogo.svg.png" onclick="themeChanger()">
+        <img class="logo" id="themeLogo" src="resources/BlackpinkLogo.svg.png" onclick="themeChanger()" title="Click to change the theme!">
         <div class="miscNavBar">
           <table class="miscNavBarTable">
           <tr>
-            <td class="miscNavBarRow"><a href="../dataStory/index.html">Home Page</a></td>
-            <td class="miscNavBarRow"><a href="../dataStory/index.html">Data Story</a></td>
-            <td class="miscNavBarRow"><a href="../diary/diary.html">Diary</a></td>
-            <td class="miscNavBarRow"><a href="../diary/diary.html">Others</a></td>
+            <td class="miscNavBarRow"><a href="index.html">Home Page</a></td>
+            <td class="miscNavBarRow"><a href="index.html">Data Story</a></td>
+            <td class="miscNavBarRow"><a href="diary/diary.html">Diary</a></td>
+            <td class="miscNavBarRow"><a href="diary/diary.html">Others</a></td>
             <!--<td class="miscNavBarRow"><a href="test">Test 5</a></td>-->
           </tr>
         </table>
@@ -32,14 +32,15 @@
         <a href="#headerPhysical" class="navLink"> Physical Sales</a>
         <a href="#headerBranding" class="navLink"> Branding</a>
         <a href="#headerDisucssion" class="navLink"> Discussion</a>
+        <a href="#headerReferences" class="navLink"> References</a>
         <!--<a href="#" class="navLink"> Nav item #5</a>-->
     </nav>
   
     </div>
 <h1 id="headerTop" autofocus>
 <img src="resources/blackpink-background.jpg" id="themePicture" height=auto width=100%></h1>
-<h1>Kpop: Are Male Idols more likely<br> 
-  to be successful than Female Idols?</h1>
+<h1>Kpop: Are Male Kpop Idol Groups more likely<br> 
+  to be successful than Female ones?</h1>
 <h2> An exploratory analysis using sales and other correlational data</h2>
 <p>
   <br>
@@ -58,9 +59,8 @@
   </td></tr>
 </table>
 <br>
-<p>
   <h3 id="headerDigital">Digital Success</h3>
-  Note: In this section, I will focus on the Kpop idols with the top Spotify streams and Youtube video views. I will use a bar chart to combine the two dimensions, and allow visualization by gender.
+  <p>Note: In this section, I will focus on the Kpop idols with the top Spotify streams and Youtube video views. I will use a bar chart to combine the two dimensions, and allow visualization by gender.
   <br>Additionally, below is a sample of a Map plot which shows the % of female groups in the top 5 most popular Kpop artists (by Google searches) in 6 different countries.
   <br><br><table id="fanRatioTable">
     <tr><td><div id="googleSearchCountry"></div></td></tr>
@@ -74,16 +74,24 @@
   <button class="buttonSurvey"> USA</button><br>
   <div id="topGroupList"></div>
 </p>
-<p>
+
   <h3 id="headerPhysical">Physical Sales</h3>
-  Note: In this section, I will explain the significance of physical album sales for Kpop idols, and observe physical album sales data to see if male Kpop idols tend to sell more. I will use a bar chart that can toggle between male and female idols.
+<p>Note: In this section, I will explain the significance of physical album sales for Kpop idols, and observe physical album sales data to see if male Kpop idols tend to sell more. I will use a bar chart that can toggle between male and female idols.
 </p>
-<p>
-  <h3 id="headerBranding">Branding</h3>
-  Note: In this section, I will observe the male:female ratio in the top ranking Kpop idols based on a Market Branding score, devised by Korean experts. I will probably use a scatter plot comparing score, with points for male and female idols coloured differently.
+<h3 id="headerBranding">Branding</h3>
+<p>Note: In this section, I will observe the male:female ratio in the top ranking Kpop idols based on a Market Branding score, devised by Korean experts. I will probably use a scatter plot comparing score, with points for male and female idols coloured differently.
 </p>
-<p>
-  <h3 id="headerDisucssion">Discussion</h3>
-  Note: Here, I will consolidate my interpretations of the data and disucss the implications of my findings.
+<h3 id="headerDisucssion">Discussion</h3>
+<p>Note: Here, I will consolidate my interpretations of the data and disucss the implications of my findings.
+</p>
+<h3 id="headerReferences">References</h3>
+<p class="apa-reference">
+  Berry, M.. (2020, August 12). These are the 5 most popular K-Pop groups of 8 different countries based on google searches. <em>Koreaboo</em>. https://www.koreaboo.com/lists/5-popular-kpop-groups-8-different-countries-based-google-searches/
+</p>
+<p class="apa-reference">
+Laffan, D. A. (2021). Positive psychosocial outcomes and fanship in K-pop fans: A social identity theory perspective. <em>Psychological Reports, 124</em>(5), 2272-2285.
+</p>
+<p class="apa-reference">
+  Rahmi, F. (2021, February 1). Exploratory data of K-pop idols. <em>The Startup</em>. https://medium.com/swlh/exploratory-data-of-k-pop-idols-8693b44ac312# 
 </p>
 </body>

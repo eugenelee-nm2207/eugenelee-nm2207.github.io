@@ -13,7 +13,10 @@ body {
     text-align:left;
     margin-left: 2.5%;
 }
-
+p {
+    margin-left: 1%;
+    margin-right: 10%;
+} 
 h1 {
     text-align: center;
     color: white;
@@ -135,7 +138,7 @@ img {
 .directoryLinks {/* to style the links and remove the underline*/
     text-decoration: none;
     color: #fff;
-    font-size: 18px;
+    font-size: 16px;
 }
 a { 
     text-decoration: underline;
@@ -218,7 +221,7 @@ button.Survey:hover {
 }
 
 #storyBoard {
-    width: 90%;
+    width: 80%;
 }
 #storyBoard-row {
     border-bottom: 1px solid #ddd;
@@ -228,8 +231,10 @@ button.Survey:hover {
 }
 .storyTH {
     text-align: center;
-}
-.storyTH {
     border-bottom: 1px solid #ddd;
     padding: 15px;
+}
+td {
+    padding-bottom: 15px;
+    padding-top: 15px;
 }
