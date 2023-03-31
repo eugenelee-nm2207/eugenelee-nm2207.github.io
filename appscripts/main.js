@@ -290,7 +290,7 @@ function updateAlbumChart(){
   albumChart.data.datasets[0] = {
   label: "Sales",
   data: salesData2,
-  backgroundColor: ["red","red","red","red","red","red","red","blue","blue","blue","blue","blue","blue","blue","blue","blue","blue"],
+  backgroundColor: ["red","red","red","red","red","red","red","red","blue","blue","blue","blue","blue","blue","blue","blue","blue"],
 }
 albumChart.update(); 
 document.getElementById("buttonPhysChange").innerHTML = "Toggle View to All Albums";
