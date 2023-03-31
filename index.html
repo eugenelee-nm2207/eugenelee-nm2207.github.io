@@ -28,8 +28,8 @@
     <nav class="nav">
         <a href="#headerTop" class="navLink"> Back to Top</a>
         <a href="#headerIntroduction" class="navLink"> Introduction</a>
-        <a href="#headerPhysical" class="navLink"> Digital Success</a>
         <a href="#headerPhysical" class="navLink"> Physical Sales</a>
+        <a href="#headerDigital" class="navLink"> Digital Success</a>
         <a href="#headerBranding" class="navLink"> Branding</a>
         <a href="#headerDisucssion" class="navLink"> Discussion</a>
         <a href="#headerReferences" class="navLink"> References</a>
@@ -59,24 +59,32 @@
   </td></tr>
 </table>
 <br>
+<h3 id="headerPhysical">Physical Sales</h3>
+<div class="chartCard"><div class="chartBox" id="canvas-container">
+  <canvas id="best-selling-album" width="800" height="400"></canvas> 
+  <button class="buttonSurvey" id="buttonPhysChange">Toggle View to Unqiue Albums Only</button>
+</div></div>
+
+
+<p>Note: In this section, I will explain the significance of physical album sales for Kpop idols, and observe physical album sales data to see if male Kpop idols tend to sell more. I will use a bar chart that can toggle between male and female idols.
+</p>
   <h3 id="headerDigital">Digital Success</h3>
   <p>Note: In this section, I will focus on the Kpop idols with the top Spotify streams and Youtube video views. I will use a bar chart to combine the two dimensions, and allow visualization by gender.
-  <br>Additionally, below is a sample of a Map plot which shows the % of female groups in the top 5 most popular Kpop artists (by Google searches) in 6 different countries.
+  <br>Additionally, below is a sample of a Map plot which shows the % of female groups in the top 5 most popular Kpop artists (by Google searches) in 7 different countries.
   <br><br><table id="fanRatioTable">
     <tr><td><div id="googleSearchCountry"></div></td></tr>
   </table>
   Click to find out the top groups of each country: <br>
-  <button class="buttonSurvey">Australia</button>
-  <button class="buttonSurvey">Indonesia</button>
-  <button class="buttonSurvey">Japan</button>
-  <button class="buttonSurvey" onClick="printTopGroups()">Korea</button>
-  <button class="buttonSurvey">UK</button>
-  <button class="buttonSurvey"> USA</button><br>
-  <div id="topGroupList"></div>
-</p>
+  <button class="buttonSurvey" id="buttonAus">Australia</button>
+  <button class="buttonSurvey" id="buttonUK">UK</button>
+  <button class="buttonSurvey" id="buttonUS"> USA</button><br>
+  <button class="buttonSurvey" id="buttonChina"> China</button>
+  <button class="buttonSurvey" id="buttonIndo">Indonesia</button>
+  <button class="buttonSurvey" id="buttonJap">Japan</button>
+  <button class="buttonSurvey" id="buttonPhil"> Philippines</button>
+  <button class="buttonSurvey" id="buttonKor">South Korea</button>
 
-  <h3 id="headerPhysical">Physical Sales</h3>
-<p>Note: In this section, I will explain the significance of physical album sales for Kpop idols, and observe physical album sales data to see if male Kpop idols tend to sell more. I will use a bar chart that can toggle between male and female idols.
+  <div id="topGroupList"></div>
 </p>
 <h3 id="headerBranding">Branding</h3>
 <p>Note: In this section, I will observe the male:female ratio in the top ranking Kpop idols based on a Market Branding score, devised by Korean experts. I will probably use a scatter plot comparing score, with points for male and female idols coloured differently.

@@ -158,7 +158,27 @@
   <p>I also took the time to firm up my data set. One problem with not having a large data base online (unlike for topics like world happiness etc) was that I had to make my own data set, which proved arduous. A lot of manual entry and data filtering was done (so that I did not have to key in pointless data) and my computer even crashed a few times! </p>
   
   <h3 id="headerW11">Progress (Week 11)</h3>
-  <p></p>
+  <p>
+    First off, I will list down the answers to the Week 11 question - In the physical and digital data segments, I will likely use: 
+    <ul>
+      <li>bar charts for datasets with many data points</li>
+      <li>pie charts for summaries of male vs female Kpop groups </li>
+      <li>bubble chart for youtube views (3 dimensions: year released, total views and views growth)</li>
+    </ul>
+    The data I will use to make these charts can be found in the week 10 diary entry. 
+    <br> Something interesting I might be able to try, would be in the analysis of the top 5 boy vs girl groups in terms of market branding. I was thinking of using radar charts to show their performance in different domains (physical sales, digital sales etc). 
+    
+    <br><br> This week, I started constructing some of the graphs. Starting with the first section of “Physical sales”, I exported the first set of data to CSV.
+    I first used the sort function to arrange the data as desired (highest male and female album sales towards the middle):
+    <br> <img src="resources/screenshots/using-sort-function.png" width="200px">
+    <br> I successfully managed to use the fetch method to import my CSV file to the code. This was necessary because there were quite a few data points for this set of data. However, one issue I consistently faced was not being able to easily visualize how I wanted to manipulate the data and what I should do to make a graph that I desired.
+  
+    <br><br> In particular, I wanted to colour the male and female bars in different colours, by using the index position of the data (<a href = "https://www.youtube.com/watch?v=GbjuWAtDROY&ab_channel=ChartJS">this tutorial</a>) but the code broke. 
+    <br><img src="resources/screenshots/color-index-not-working.png" height="500px" width="450px">
+    <br> Instead, I referred to <a href = "https://www.w3schools.com/js/js_if_else.asp">good ol W3schools</a> and used the if else function to create the large array of colours needed to colour the graph. 
+    <br><br> To create an alternate view of the data (only one album per unique group), I used this <a href = "https://www.youtube.com/watch?v=iK4u0C9v6AI&t=10s&ab_channel=ChartJS">youtube tutorial</a> to revise the process of using chart.update. 
+    <br><br> Lastly, I also did up the code that generates the top 5 favourite Kpop groups in 7 different countries (complements the map chart under digital sales). Here, I used the “else if” method that I had learnt along with for loops.
+  </p>
 
   <h3 id="headerW12">Progress (Week 12)</h3>
   <p></p>
