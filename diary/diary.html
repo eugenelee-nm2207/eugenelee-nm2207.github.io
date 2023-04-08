@@ -51,42 +51,43 @@
         <img src="resources/background-check.png" title="background check icons" height="200px" width="200px">
         <br>Background
       </th>
-      <td>The Kpop Industry is a rather competitive one, with new groups forming, and much content being generated, every year. 
-        While there are definitely many factors that could contribute to a group's success, a common question, is if Male Kpop idols would tend to do better than female idols.
-      <br><br> While the gender split amongst Kpop idols is roughly equal <a href = "https://medium.com/swlh/exploratory-data-of-k-pop-idols-8693b44ac312#:~:text=There%20are%20208%20K%2Dpop%20groups%20in%20total.,promoting%20in%20non%2DKorean%20languages">(Rahmi, 2021)</a>,
-          the gender split of fans is slightly more skewed, at about 7 Female : 3 Male (check out the Data Story!).
-      <br><br> Traditionally, it is assumed that male Kpop idols would meet with more success as they would appeal to more female fans. 
-              However, is this backed by actual statistics? Furthermore, today, girl groups have begun targeting the female fanbase, with themes of female empowerment.
-      <br><br> Through my data story, I will endeavour to explore this.
+      <td>The Kpop Industry is a rather competitive one, with new groups forming, and much content being generated, every year. While there are definitely many factors that could contribute to a group's success, a common question, is if Male Kpop idols would tend to do better than female idols.
+        While the gender split amongst Kpop idols is roughly equal  <a href = "https://medium.com/swlh/exploratory-data-of-k-pop-idols-8693b44ac312#:~:text=There%20are%20208%20K%2Dpop%20groups%20in%20total.,promoting%20in%20non%2DKorean%20languages">(Rahmi, 2021)</a>,
+        the gender split of fans is slightly more skewed, at about 7 Female : 3 Male (check out the Data Story!).Traditionally, Kpop male idol groups dominated physical album sales (because female fans are more “committed”), while female groups tended to match up better in online streaming and downloads (Yoon 2022) by appealing to the general public.      <br><br> Traditionally, it is assumed that male Kpop idols would meet with more success as they would appeal to more female fans. 
+        Today, Kpop girl groups have begun targeting the newer generation, with newer concepts emphasizing, and even commodifying, the theme of female empowerment and breaking stereotypes (Sun, Paje & Lee, 2021; to Zhang et al., 2022).      <br><br> Through my data story, I will endeavour to explore this.
         </td>
     </tr> 
     <tr id="storyBoard-row">
       <th class="storyTH"><img src="resources/idea.png" height="200px" width="200px">
         <br>Problem Statement</th>
-      <td>Are Male Kpop idols more likely to do better than Female Kpop idols?</td>
+      <td>Are Male Kpop Idol Group more likely to be successful than Female ones?</td>
     </tr>
     <tr id="storyBoard-row">
       <th class="storyTH"><img src="resources/dashboard.png" height="200px" width="200px">
         <br>Data</th>
       <td>
-        I will be using data across 3 dimensions:
+        I have created my own data set, using data of Kpop idol groups, based on 3 dimensions:
         <ol>
           <li>Digital Success - Youtube/Spotfy Streams, Google Searches <a href="https://www.thefashionrequest.com/k-pop-top-100-most-streamed-songs-spotify/ ">(example)</a></li>
           <li>Physical Sales <a href="https://en.wikipedia.org/wiki/List_of_best-selling_albums_in_South_Korea">(example)</a></li>
           <li>Brand Reputation Scores <a href="https://www.kpoppost.com/top-100-korean-singer-brand-reputation-rankings-in-february-2023-2/">(example)</a></li>
         </ol>
-        I will further classify the data by gender (i.e Male or Female artist) and use charts to conduct analyses.
+        I will further filter the data by gender (i.e Male or Female artist) and use charts to conduct analyses.
       </td>
     </tr>
     <tr id="storyBoard-row">
       <th class="storyTH"><img src="resources/searching.png" height="200px" width="200px">
         <br>Findings</th>
-      <td> Work in Progress!</td>
+      <td> I am currently done with visualizing data for the physical sales. It seems that it is mostly true that male Kpop groups are outperforming female Kpop groups, and by a large margin, in fact.
+        <br><br>However, my preliminary viewing of the rest of the data, seems to suggest that female Kpop groups are doing as well, or even better, in terms of Digital Presence and Brand Reputation scores.
+        </td>
     </tr>
     <tr id="storyBoard-row">
       <th class="storyTH"><img src="resources/monitoring.png" height="200px" width="200px">
         <br>Analysis</th>
-      <td>Work in Progress!</td>
+      <td>While it may seem that past trends are still holding strong today, a closer look at the data of Kpop groups with the higher brand reputation ranking today, will reveal that even in terms of Physical Sales, up-and-coming female groups today are catching up.
+        <br><br>Furthermore, physical albums are only one dimension of success – perhaps they may not be as important given so many other dimensions.
+        </td>
     </tr>
     <tr id="storyBoard-row">
       <th class="storyTH"><img src="resources/social-media.png" height="200px" width="200px">
@@ -95,7 +96,7 @@
         Analysis of other Dimensions:
         <ul>
           <li>Social Media Analytics - Different Platforms, Like and Dislikes Ratios</li>
-          <li>Revenue Generated</li>
+          <li>Revenue Generated - to measure overall success. This will allow for much more obvious comparisons</li>
         </ul>
       </td>
     </tr>
@@ -181,7 +182,17 @@
   </p>
 
   <h3 id="headerW12">Progress (Week 12)</h3>
-  <p></p>
+  <p>
+    Firstly, I updated the <a href="#headerIntroduction">story board</a>!
+    <br><br>This week, I followed this <a href="https://www.youtube.com/watch?v=cxf_GEiryoc&ab_channel=ChartJS">youtube video</a> to learn how to easily have multiple charts side by side in nicely formatted boxes. 
+    <br>I also figured out I could input the border colours of the bar chart into excel, and extract them as an array using the fetch function, to easily use it under backgroundColor to colour the bars according to gender.
+    <br><img src="resources/screenshots/excel-color.png" height="500px" width="450px">
+    
+    <br><br> Next, I followed this <a href="https://www.youtube.com/watch?v=MyWcp3GOeeE&ab_channel=ChartJS">youtube tutorial</a> to learn how to convert arrays into the data structure necessary to construct scatter charts
+    <br><br> I then tried using <a href="https://stackoverflow.com/questions/44661671/chart-js-scatter-chart-displaying-label-specific-to-point-in-tooltip"this forum's></a> suggestions to add labels to the individual points, but for some reason, every point was getting labelled with every label in the array! I will need more time to fix this. 
+    <br>I was also unable to use the same method of colouring the dots, that I used for the bar charts.
+    <br><br><img src="resources/screenshots/cannot-color-scatter.png" height="500px" width="450px">
+  </p>
 
 <h3 id="headerW13">Progress (Week 13)</h3>
 <p></p>

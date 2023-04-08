@@ -228,7 +228,7 @@ img {
     width: 100vw;
     height: calc(100vh - 40px);
     background: rgba(54, 162, 235, 0);
-    display: flex;
+    display: flex; /* allows us to place chartBoxes side by side*/
     align-items: center;
     justify-content: center;
   }
@@ -236,6 +236,16 @@ img {
     width: 700px;
     padding: 20px;
     border-radius: 20px;
-    border: solid 3px rgba(230, 100, 147, 1);
-    background: rgba(243, 58, 106, 1);
+    border: solid 3px rgb(216, 67, 122);
+    background: rgb(235, 149, 181);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #canvas-containerFanRatio {
+    width: 300px;
+    height: 300px;
+  }
+#canvas-containerPhys1, #canvas-containerPhys2 {
+    width: 500px;
+    height: 550px;
   }

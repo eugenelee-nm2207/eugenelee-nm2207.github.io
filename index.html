@@ -53,17 +53,21 @@
       <div id="ratioFact"> In his survey, Lafan (2020) conducted a survey on 1477 individuals who identified as Kpop-fans.</div>
       <br> Note: In this section, I will also discuss some reasons why Male Kpop idols are assumed to do better in the market versus female Kpop idols.
     </p>
-  <table id="fanRatioTable">
-    <tr><td>
-      <canvas id="myChart" width="400" height="350"></canvas>
-  </td></tr>
-</table>
+      <div class="chartBox" id="canvas-containerFanRatio">
+        <canvas id="myChart"></canvas> 
+      </div>
+
 <br>
 <h3 id="headerPhysical">Physical Sales</h3>
-<div class="chartCard"><div class="chartBox" id="canvas-container">
-  <canvas id="best-selling-album" width="800" height="400"></canvas> 
-  <button class="buttonSurvey" id="buttonPhysChange">Toggle View to Unqiue Albums Only</button>
-</div></div>
+<div class="chartCard">
+  <div class="chartBox" id="canvas-containerPhys1">
+      <canvas id="best-selling-album"></canvas> 
+      <button class="buttonSurvey" id="buttonPhysChange">Toggle View to Unqiue Albums Only</button>
+  </div>
+  <div class="chartBox" id="canvas-containerPhys2">
+    <canvas id="best-selling-artist"></canvas> 
+  </div>
+</div>
 
 
 <p>Note: In this section, I will explain the significance of physical album sales for Kpop idols, and observe physical album sales data to see if male Kpop idols tend to sell more. I will use a bar chart that can toggle between male and female idols.
@@ -83,9 +87,15 @@
   <button class="buttonSurvey" id="buttonJap">Japan</button>
   <button class="buttonSurvey" id="buttonPhil"> Philippines</button>
   <button class="buttonSurvey" id="buttonKor">South Korea</button>
-
   <div id="topGroupList"></div>
 </p>
+
+<div class="chartCard">
+  <div class="chartBox" id="canvas-containerDig2">
+      <canvas id="youtube-views-by-video" width="800" height="400"></canvas> 
+  </div>
+</div>
+
 <h3 id="headerBranding">Branding</h3>
 <p>Note: In this section, I will observe the male:female ratio in the top ranking Kpop idols based on a Market Branding score, devised by Korean experts. I will probably use a scatter plot comparing score, with points for male and female idols coloured differently.
 </p>

@@ -7,7 +7,7 @@ const navButton = document.querySelector(".navButton");
 navButton.addEventListener("click", () => {
     navMenu.classList.add("nav-open");
     navOverlay.classList.add("nav-overlay-open");
-});
+}); 
 
 // allows navigation menu to disappear when any other area of the screen is clicked
 navOverlay.addEventListener("click", () => {
@@ -59,6 +59,7 @@ const introFansData = {
       data: introFansData,
       options: { 
           maintainAspectRatio: false,
+          aspectRatio: 1/1,
           legend: {
               display: true,
               fontColor: "rgb(199,21,133)",
@@ -154,16 +155,15 @@ function printTopGroups(event) {
   document.getElementById("topGroupList").innerHTML = text;
 }
 
-// -- Physical Album Sales Bar Charts --
-
+// -- Physical Album Sales Bar Charts: Bar chart by album --
 // Make a request for the CSV file
-const data = fetch("resources/data/best-selling-physical-by-album-sorted.csv")
+const dataP1 = fetch("resources/data/best-selling-physical-by-album-sorted.csv")
 .then(function (response){
     return response.text();
 }) 
-.then(function(data){
+.then(function(dataP1){
     const table = [];
-    const rows = data.split("\r\n");
+    const rows = dataP1.split("\r\n");
 
     rows.forEach((r,index) => {
         const item = r.split(",");
@@ -188,7 +188,6 @@ const data = fetch("resources/data/best-selling-physical-by-album-sorted.csv")
           salesData.push(table[j][4]);
         }
     };
-
     //using for loop to add colors to bars in bar chart below without manual input. red for female, blue for male
     const albumColors = [];
     function albumLabelColor() {
@@ -222,7 +221,8 @@ const data = fetch("resources/data/best-selling-physical-by-album-sorted.csv")
         type: "bar",
         data: dataObj,
         options: { 
-            maintainAspectRatio: false,
+          maintainAspectRatio: false, // forces it into a square
+          aspectRatio: 1/1,
             legend: {
                 display: false
             },
@@ -282,6 +282,7 @@ const dataObj2 = {
        }
    ]
 };
+// using if/else to set up the function  that allows us to display between data in the same canvas
 counterAlbumChanger = 0
 function updateAlbumChart(){
   counterAlbumChanger++;
@@ -306,9 +307,199 @@ document.getElementById("buttonPhysChange").innerHTML = "Toggle View to All Albu
 
   }
 };
-
+// button to toggle between the album charts
 document.getElementById("buttonPhysChange").addEventListener("click",updateAlbumChart);
 
-})
+});
+
+// -- Physical Album Sales Bar Charts: Bar chart by artist --
+// Make a request for the CSV file
+const dataP2 = fetch("resources/data/best-selling-physical-by-artist.csv")
+.then(function (response){
+    return response.text();
+}) 
+.then(function(dataP2){
+    const table = [];
+    const rows = dataP2.split("\r\n");
+
+    rows.forEach((r,index) => {
+        const item = r.split(",");
+        table.push(item);
+    });
+    console.log(table);
+
+    const groupLabel = [];
+    const genderLabel = [];
+    const salesData = [];
+    const barColor = [];
+
+    //using for loop to add elements to data arrays created above
+    for(j=0;j<table.length;j++)
+    {
+          groupLabel.push(table[j][2]);
+          genderLabel.push(table[j][1]);
+          salesData.push(table[j][3]);
+          barColor.push(table[j][4]);
+    };
+console.log(barColor);
+    //dataObj for the top album sales chart
+    const dataObj = {
+       labels: groupLabel,
+        datasets: [
+            {
+              label: "Sales",
+              data: salesData,
+                borderWidth: 2,
+                backgroundColor: barColor,
+                //borderColor: "hsla(0,100%,50%,1)"
+            }
+        ]
+    };
+
+    //creating the bar chart
+    const albumChart = new Chart("best-selling-artist",
+    {
+        type: "bar",
+        data: dataObj,
+        options: { 
+            maintainAspectRatio: false, // forces it into a square
+            aspectRatio: 1/1,
+            legend: {
+                display: false
+            },
+            title: {
+                display: true,
+                text: ['Kpop Groups with the Top Sales in South Korea'],
+                fontFamily: "TrebuchetMS",
+                fontSize: 24,
+                fontColor: 'rgb(0, 0, 0)',
+            },
+            scales : {
+                yAxes:[{
+                    ticks:{
+                        beginAtZero: true,
+                        suggestedMin: 0,
+                        suggestedMax: 40000000,
+                    }
+                }],
+                xAxes:[{
+                  ticks:{
+                      display:false,
+                  },
+              }],
+            },
+        }
+    }); 
+
+});
 
 
+// -- Youtube Views Chart: Scatter chart by video --
+// Make a request for the CSV file
+const dataD1 = fetch("resources/data/youtube-views-by-video.csv")
+.then(function (response){
+    return response.text();
+}) 
+.then(function(dataD1){
+    const table = [];
+    const rows = dataD1.split("\r\n");
+
+    rows.forEach((r,index) => {
+        const item = r.split(",");
+        table.push(item);
+    });
+    console.log(table);
+
+    const genderLabel = [];
+    const groupLabel = [];
+    const videoLabel = [];
+    const streamsDataTotal = [];
+    const streamsDataYesterday = [];
+    const dotColor = [];
+
+    //using for loop to add elements to data arrays created above
+    for(j=0;j<table.length;j++)
+    {
+          genderLabel.push(table[j][1]);
+          groupLabel.push(table[j][2]);
+          videoLabel.push(table[j][3]);
+          streamsDataTotal.push(table[j][8]);
+          streamsDataYesterday.push(table[j][5]);
+          dotColor.push(table[j][6]);
+    };
+    //dataObj for the top album sales chart
+    const scatterArray = streamsDataTotal.map((xvalue, index) => {
+      let scatterObj = {};
+      scatterObj.x = xvalue;
+      scatterObj.y = streamsDataYesterday[index];
+      return scatterObj;
+    })
+    //console.log(scatterArray);
+    const dataObj = {
+        datasets: [
+            {
+              //label: test2,
+              data: scatterArray,
+                borderWidth: 2,
+                backgroundColor: dotColor,
+                fill: false,
+                //borderColor: "hsla(0,100%,50%,1)"
+            }
+        ]
+    };
+console.log(dotColor);
+    //creating the scatter chart
+    const albumChart = new Chart("youtube-views-by-video",
+    {
+        type: "scatter",
+        data: dataObj,
+        options: { 
+            maintainAspectRatio: true, // forces it into a square
+            //aspectRatio: 1/1,
+            legend: {
+                display: false
+            },
+            title: {
+                display: true,
+                text: ["Most Viewed Kpop Group' MVs"],
+                fontFamily: "TrebuchetMS",
+                fontSize: 24,
+                fontColor: 'rgb(0, 0, 0)',
+            },
+            scales : {
+                yAxes:[{
+                    ticks:{
+                        beginAtZero: true,
+                        suggestedMin: 0,
+                        suggestedMax: 750000,
+                    },
+                    scaleLabel: {
+                      labelString: 'Daily Increases',
+                      display: true,
+                    },
+                }],
+                xAxes:[{
+                  ticks:{
+                      display:true,
+                      beginAtZero: true,
+                      suggestedMax: 2500,
+                      },
+                      scaleLabel: {
+                        labelString: 'Total Number of Views (in millions)',
+                        display: true,
+                  },
+              }],
+            },
+            tooltips: {
+              callbacks: {
+                  label: function(tooltipItem, data) {
+                      var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || 'Other';
+                      var label = data.labels[tooltipItem.index];
+                      return datasetLabel + ': ' + label;
+                  }
+              }
+          }
+        }
+    }); 
+
+});
