@@ -209,7 +209,7 @@ const dataP1 = fetch("resources/data/best-selling-physical-by-album-sorted.csv")
         }
     }); 
 
-// -- chart with only 1 album per group
+// -- chart with only 1 album per group --
 
 // datasets for graph with only 1 album per group:
 const albumLabel2 = ["RED VELVET: THE REVE FESTIVAL 2022 - BIRTHDAY","LE SSEARFIM: ANTIFRAGILE","ITZY: CHESHIRE","TWICE: BETWEEN 1&2","NewJeans: OMG","IVE: AFTER LIKE","aespa: GIRLS - THE 2ND MINI ALBUM","BLACKPINK: BORN PINK","BTS: MAP OF THE SOUL: 7","SEVENTEEN: 4TH ALBUM `FACE THE SUN`","Stray Kids: MAXIDENT","TXT: THE NAME CHAPTER: TEMPTATION","NCT 127: STICKER - THE 3RD ALBUM","NCT DREAM: 맛 (HOT SAUCE) - THE 1ST ALBUM","NCT: RESONANCE PT. 1","Enhypen: MANIFESTO: DAY 1","EXO: DON'T MESS UP MY TEMPO"];
@@ -229,11 +229,11 @@ const dataObj2 = {
        }
    ]
 };
-// using if/else to set up the function  that allows us to display between data in the same canvas
+// using if/else to set up the function  that allows us to toggle between different displays of the data in the same canvas
 counterAlbumChanger = 0
 function updateAlbumChart(){
   counterAlbumChanger++;
-  if (counterAlbumChanger === 1) {
+  if (counterAlbumChanger === 1) { //change to new graph (unique albums)
   albumChart.data.labels = albumLabel2;
   albumChart.data.datasets[0] = {
   label: "Sales",
@@ -243,7 +243,7 @@ function updateAlbumChart(){
 albumChart.update(); 
 document.getElementById("buttonPhysChange").innerHTML = "Toggle View to All Albums";
   } else {
-    counterAlbumChanger = counterAlbumChanger-2;
+    counterAlbumChanger = counterAlbumChanger-2; //change to old graph (all albums)
     albumChart.data.labels = albumLabel;
   albumChart.data.datasets[0] = {
   label: "Sales",
@@ -350,7 +350,7 @@ const mapPlot = Plotly.plot('googleSearchCountry', [{
     title: 'Percentage Male Groups',
     thickness: 30,
 },
-colorscale: [ //color scale referenced from https://plotly.com/javascript/colorscales/
+colorscale: [ //color scale referenced from https://plotly.com/javascript/colorscales/. generates gradient from red (0) to blue (1)
   ['0.0', 'rgb(165,0,38)'],
   ['0.1', 'rgb(215,48,39)'],
   ['0.2', 'rgb(244,109,67)'],
@@ -373,13 +373,8 @@ colorscale: [ //color scale referenced from https://plotly.com/javascript/colors
     }
   },width:825, height:525,
 })
-/*function swapGenderMap (){
-  mapPlot.z = [0.6, 0.8, 0.8, 0.6, 0.8, 0.4, 0.4]; //change the data set to Male Groups
-  mapPlot.update(); 
-}
-swapGenderMap();*/
-// -- click to find out the top groups of each country --
 
+// -- click to find out top 5 groups section --
 //listing the datasets
 const AusTop = ["BTS (Male)", "Girl's Generation (Female)", "GOT7 (Male)", "SHINee (Male)", "iKON (Male)"];
 const UKTop = ["BTS (Male)", "BIGBANG (Male)", "GOT7 (Male)", "Girl's Generation (Female)", "2PM (Male)"];
@@ -465,7 +460,7 @@ $(document).ready(function() {
 
     var rows = Papa.parse(csvString, {header: true}).data;
 
-    //creating data object for default
+    //creating data object for default view
     var data = rows.map(function(row) {
       return {
         x: row[POINT_X],
@@ -480,7 +475,7 @@ $(document).ready(function() {
 				backgroundColor: POINT_COLOR,
         data: data,
         pointRadius: POINT_RADIUS,
-        pointHoverRadius:  POINT_RADIUS + 4,
+        pointHoverRadius:  POINT_RADIUS + 4, // point enlarges when mouse hovers over
 			}]
     };
     //creating data object for toggles: female, male and averages
@@ -583,7 +578,7 @@ $(document).ready(function() {
 
       // function that allows button to toggle the chart between various views of the dataset
       function youtubeChartAll() {
-        youtubeChart.data.datasets[0].data = data; //change the data set to all Groups
+        youtubeChart.data.datasets[0].data = data; //change the data set to all Groups. [0] as there is only 1 dataset
         youtubeChart.update(); 
       };
       document.getElementById("youtubeAll").addEventListener("click",youtubeChartAll);
@@ -630,6 +625,7 @@ const dataObjBrandRep = {
       }
   ]
 }
+//construct chart
 new Chart("brandRepChart",
             {
                 type: "horizontalBar",
@@ -669,7 +665,7 @@ new Chart("brandRepChart",
 
 // -- Radar Chart to compare Top 5 (by Brand Rep Male and Female Groups) --
 
-// construct data obejct for default radar chart
+// construct data obejct for default radar chart. 1 dataset for each group (total 10)
 const dataObjDomain = {
   labels: [
     'Group Age',
@@ -688,9 +684,9 @@ const dataObjDomain = {
     //pointHoverBackgroundColor: '',
     pointHoverBorderColor: 'rgb(255, 255, 255)',
     pointRadius: 5,
-    pointHoverRadius: 7,
+    pointHoverRadius: 7, // point enlarges when mouse hovers over
     borderColor: 'rgb(0,139,139,0.7)',
-    hidden: false,
+    hidden: false, //set to false so that everything shows by default on page load, and can be changed to hidden when button is pressed
   },{
     label:'BLACKPINK',
     data:[41.18,55.84,94.94,100,53.80],
@@ -703,7 +699,7 @@ const dataObjDomain = {
     pointRadius: 5,
     pointHoverRadius: 7,
     borderColor: 'rgb(199,21,133,0.7)',
-    hidden: false,
+    hidden: false, //set to false so that everything shows by default on page load, and can be changed to hidden when button is pressed
   },{
     label:'IVE',
     data:[11.76,37.78,18.28,27.76,33.78],
@@ -716,7 +712,7 @@ const dataObjDomain = {
     pointRadius: 5,
     pointHoverRadius: 7,
     borderColor: 'rgb(255,69,0,0.7)',
-    hidden: false,
+    hidden: false, //set to false so that everything shows by default on page load, and can be changed to hidden when button is pressed
   },{
     label:'LE SSERAFIM',
     data:[5.88,32.32,13.71,6.15,21.37],
@@ -729,7 +725,7 @@ const dataObjDomain = {
     pointRadius: 5,
     pointHoverRadius: 7,
     borderColor: 'rgb(0,0,128,0.7)',
-    hidden: false,
+    hidden: false,  //set to false so that everything shows by default on page load, and can be changed to hidden when button is pressed
   },{
     label:'H1-KEY',
     data:[5.88,30.0,0.52,2.59,0.82],
@@ -742,7 +738,7 @@ const dataObjDomain = {
     pointRadius: 5,
     pointHoverRadius: 7,
     borderColor: 'rgb(186,0,0,0.7)',
-    hidden: false,
+    hidden: false, //set to false so that everything shows by default on page load, and can be changed to hidden when button is pressed
   },{
     label:'BTS',
     data:[58.82,65.20,100,83.4,100],
@@ -755,7 +751,7 @@ const dataObjDomain = {
     pointRadius: 5,
     pointHoverRadius: 7,
     borderColor: 'rgb(75,0,130,0.7)',
-    hidden: false,
+    hidden: false, //set to false so that everything shows by default on page load, and can be changed to hidden when button is pressed
   },{
     label:'EXO',
     data:[64.71,36.23,6.44,1.59,28.9],
@@ -768,7 +764,7 @@ const dataObjDomain = {
     pointRadius: 5,
     pointHoverRadius: 7,
     borderColor: 'rgb(255,250,205,0.7)',
-    hidden: false,
+    hidden: false, //set to false so that everything shows by default on page load, and can be changed to hidden when button is pressed
   },{
     label:'SEVENTEEN',
     data:[47.06,33.06,17.44,22.64,71.88],
@@ -781,7 +777,7 @@ const dataObjDomain = {
     pointRadius: 5,
     pointHoverRadius: 7,
     borderColor: 'rgb(100,149,237,0.7)',
-    hidden: false,
+    hidden: false, //set to false so that everything shows by default on page load, and can be changed to hidden when button is pressed
   },{
     label:'BIGBANG',
     data:[100,26.13,10.21,1.53,5.31],
@@ -794,7 +790,7 @@ const dataObjDomain = {
     pointRadius: 5,
     pointHoverRadius: 7,
     borderColor: 'rgb(0,128,0,0.7)',
-    hidden: false,
+    hidden: false, //set to false so that everything shows by default on page load, and can be changed to hidden when button is pressed
   },{
     label:'NCT Dream',
     data:[41.18,20.98,10.37,34.34,43.40],
@@ -807,7 +803,7 @@ const dataObjDomain = {
     pointRadius: 5,
     pointHoverRadius: 7,
     borderColor: 'rgb(255,215,0,0.7)',
-    hidden: false,
+    hidden: false, //set to false so that everything shows by default on page load, and can be changed to hidden when button is pressed
   }
 ]};
 // construct the radar chart
@@ -819,7 +815,7 @@ const domainChart = new Chart("domainChart",
                   tooltips: {
                     enabled: true,
                     callbacks: {
-                        label: function(tooltipItem, data) {  // the values for each label were not showing in the tooltip, so I fixed it using code from this source: https://github.com/chartjs/Chart.js/issues/6188
+                        label: function(tooltipItem, data) {  // the values for each label were not showing in the tooltip, so I learnt how to fix it using code from this source: https://github.com/chartjs/Chart.js/issues/6188
                             return data.datasets[tooltipItem.datasetIndex].label + ' : ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
                         }
                     }
@@ -860,7 +856,7 @@ const domainChart = new Chart("domainChart",
                         lineWidth: 2,
                         color: "black" 
                       },
-                      pointLabels: { //labels of the 5 domains
+                      pointLabels: { // styling labels of the 5 domains
                         fontSize: 12.5,
                         fontStyle: "bold",
                         fontColor: 'black',
@@ -873,11 +869,15 @@ const domainChart = new Chart("domainChart",
 let domainCounter = 0; // domain counter will take values from 0-10, with 0 being all groups shown and each group taking one number from 1-10 each
 groupDomainInfo = document.getElementById("groupDomainInfo"); // to easily access div to change text in each function
 
-    function domainNCT(){
+//dataset no. 0-4 are the female groups, 5-9 are the male groups
+// assign each group, and the other toggle options, one domainCounter value each, to cycle to them when button is pressed
+
+    // buttons for individual groups: 
+    function domainNCT(){  
       if (domainCounter != 9) { 
-      for (let i = 0; i < 9; i++) {domainChart.data.datasets[i].hidden=true};
+      for (let i = 0; i < 9; i++) {domainChart.data.datasets[i].hidden=true}; 
       domainChart.data.datasets[9].hidden=false;
-        domainCounter = 9;
+        domainCounter = 9; 
         groupDomainInfo.innerHTML = "<strong>Age in 2023:</strong> <u>7</u> <br> <strong>Brand Reputation Index:</strong> <u>1,862,797</u> <br> <strong>Total Youtube Views:</strong> <u>0.737bn</u> <br> <strong>Peak Monthly Youtube Views:</strong> <u>36.18mil</u> <br> <strong>Best selling album:</strong> <u>'Hot Sauce'</u> <br> <strong>Best album sales:</strong> <u>2,183,437 </u>";
       } else {
         domainCounter = 0;
@@ -1054,7 +1054,7 @@ groupDomainInfo = document.getElementById("groupDomainInfo"); // to easily acces
     }
     document.getElementById("buttonNJ").addEventListener("click",domainNJ);
 
-    //to generate average statistics for male and female groups + show all male/female group's datasets
+    //buttons to generate average statistics for male and female groups + show all male/female group's datasets:
     function domainMale(){
       if (domainCounter != 11) {
         for (let i = 5; i<10 ; i++) {domainChart.data.datasets[i].hidden=false};
