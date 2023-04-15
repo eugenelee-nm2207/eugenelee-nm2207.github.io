@@ -1,8 +1,4 @@
-/* for interactive navigation bar 1 */
-
-/*html {
-    scroll-behavior: smooth;
-  }*/
+/* -- general styling of webpage -- */
 body {
     background: palevioletred;
     --topNavBar-height: 60px; /*declaring a CSS variable*/
@@ -38,10 +34,19 @@ h4 {
     text-align: center;
     color: black;
 }
-.documentation {
-    border: 5px solid #555;
+
+/* -- styling text properties */ 
+.highlight {
+    background-color:black;
+    text-decoration: underline;
+    color: palevioletred;
+}
+mark {
+    background-color:black;
+    color: palevioletred;
 }
 
+/* -- styling images --*/
 img {
     max-width: 100%;
     height: auto;
@@ -49,8 +54,19 @@ img {
     margin-right: auto;
 }
 
+.documentation { /* for documentation images if needed */
+    border: 5px solid #555;
+}
+
+/* -- creates hanging indent for APA citations -- */
+.apa-reference { 
+    padding-left: 36px;
+    text-indent: -36px;
+    text-align: left;
+}
+/* -- for navigation bar -- */
 .topNavBar {
-    position: fixed; /*top row exists even while user scrolls down*/
+    position: fixed; /*top bar exists even while user scrolls down*/
     top: 0;
     left: 0;
     width: 100%;
@@ -77,12 +93,43 @@ img {
     cursor: pointer;
 }
 
-.navButton > span { /*styling Google Material Icons*/
+.navButton > span { /*styling Google Material Icons; this is the button to open the menu*/
     color: pink;
     font-size: calc(--topNavBar-height / 2); /*height based on navBar's height*/
 }
 
-.nav {
+.miscNavBar .dataLinks { 
+    display: flex;
+    gap: 2rem; 
+}
+
+.miscNavBar { 
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.miscNavBarTable { /*this table contains and arranges the links in the top nav bar*/
+    width: 70%;
+    margin-left: left;
+    margin-right: auto;
+    text-align: center;
+}
+.miscNavBarRow { /*if I want to add borders to the links in the top nav bar row.*/
+    border: 2px solid rgba(0,0,0,0);
+    border-radius:5px;
+    width: 33%;
+}
+.miscNavBarRow:hover { /* if I want to add colour when links in top nav bar are hovered over -- */
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/* -- this is the popout side bar after clicking the button-- */
+.nav { 
     --nav-width: 300px;
     position: fixed;
     top: 0;
@@ -98,7 +145,7 @@ img {
     transform: translateX(0); /*resets value with nice smooth transition with the help of javascript*/
 }
 
-.navLink {
+.navLink { /* stlying the words inside the popout side bar -- */
     display: block;
     font-family: sans-serif;
     font-size: 24px;
@@ -107,11 +154,11 @@ img {
     color: pink;
 }
 
-.navLink:not(:last-child) { 
+.navLink:not(:last-child) { /* stlying the boxes inside the popout side bar -- */
     border-bottom: 1px solid pink;
 }
 
-.navLink:hover { 
+.navLink:hover { /* highlight when mouse hovers over box -- */
     background: rgba(255,255,255,0.1); /*subtle highlight when hovering*/
 }
 
@@ -124,102 +171,11 @@ img {
     height: 100vh;
     background: rgba(0,0,0,0.2);
 }
-
 .nav-overlay-open {
     display: block; 
 }
 
-/* For misc nav bar*/
-
-/*li { to remove the bullet points
-    list-style: none;
-}*/
-
-.directoryLinks {/* to style the links and remove the underline*/
-    text-decoration: none;
-    color: #fff;
-    font-size: 16px;
-}
-a { 
-    text-decoration: underline;
-    color: #fff;
-    font-size: 20px;
-}
-a:hover {
-    color:pink
-}
-
-.miscNavBar .dataLinks {
-    display: flex;
-    gap: 2rem; 
-}
-
-.miscNavBar {
-    width: 100%;
-    height: 60px;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.miscNavBarTable {
-    width: 70%;
-    margin-left: left;
-    margin-right: auto;
-    text-align: center;
-}
-.miscNavBarRow {
-    border: 2px solid black;
-    border-radius:5px;
-}
-.miscNavBarRow:hover {
-    background-color: black;
-}
-.highlight {
-    background-color:black;
-    text-decoration: underline;
-    color: palevioletred;
-}
-mark {
-    background-color:black;
-    color: palevioletred;
-}
-/*not using container1 or buttons right now*/
-.container1 { /*from https://linuxhint.com/how-to-make-html-container-box-in-html/ */
-    display: grid;
-    grid-template-columns: auto auto;
-    /*background-color: #40966c;*/
-    padding: 15px;
-    gap:10px;
-}
-.container1>div {
-    /*background-color: #c4d1cb;*/
-    text-align: center;
-    padding: 20px auto;
-    font-size: 15px;
-}
-#fanRatioTable {
-    width:auto;
-    height: 80px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-.buttonSurvey {
-    border-radius: 9px;
-    background-color: black;
-    color: palevioletred;
-    font-size: 18px;
-    font-family: serif;
-}
-button.Survey:hover {
-    background-color: pink;
-    color: black;
-}
-
+/* styling storyboard table */ 
 #storyBoard {
     width: 80%;
 }
@@ -239,4 +195,17 @@ td {
     padding-top: 15px;
 }
 
-
+/* -- styling the links I referenced -- */
+.directoryLinks {/* to style the links and remove the underline*/
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+a { 
+    text-decoration: underline;
+    color: #fff;
+    font-size: 20px;
+}
+a:hover {
+    color:pink
+}

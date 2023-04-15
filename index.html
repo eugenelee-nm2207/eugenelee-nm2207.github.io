@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<!-- Linking CSS,JS and Material Icons (for navigation pane button) -->
 <link rel="stylesheet" type="text/css" href="css/appstyle.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <script defer type="text/javascript" src="appscripts/main.js"></script> 
+
+<!-- Linking the other sources I have used -->
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Load jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  
+    <!-- Load Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+
+    <!-- Load PapaParse to read csv files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
+
 
 </head> 
 <body>
+  <!-- Setting up Top Navigation Bar and Navigation panel-->
     <div class="topNavBar" id="topNavBar">
         <button type="button" class="navButton"><span class="material-icons">menu</span></button>
         <img class="logo" id="themeLogo" src="resources/BlackpinkLogo.svg.png" onclick="themeChanger()" title="Click to change the theme!">
         <div class="miscNavBar">
           <table class="miscNavBarTable">
           <tr>
-            <td class="miscNavBarRow"><a href="index.html">Home Page</a></td>
+            <td class="miscNavBarRow"><a href="https://nm2207.org/2223S2/e0725630/web/">About Me</a></td>
             <td class="miscNavBarRow"><a href="index.html">Data Story</a></td>
             <td class="miscNavBarRow"><a href="diary/diary.html">Diary</a></td>
-            <td class="miscNavBarRow"><a href="diary/diary.html">Others</a></td>
             <!--<td class="miscNavBarRow"><a href="test">Test 5</a></td>-->
           </tr>
         </table>
@@ -32,79 +43,266 @@
         <a href="#headerDigital" class="navLink"> Digital Success</a>
         <a href="#headerBranding" class="navLink"> Branding</a>
         <a href="#headerDisucssion" class="navLink"> Discussion</a>
+        <a href="#headerLimitations" class="navLink"> Limitations and Recommendations</a>
+        <a href="#headerConclusion" class="navLink"> Conclusion</a>
         <a href="#headerReferences" class="navLink"> References</a>
-        <!--<a href="#" class="navLink"> Nav item #5</a>-->
     </nav>
   
     </div>
-<h1 id="headerTop" autofocus>
-<img src="resources/blackpink-background.jpg" id="themePicture" height=auto width=100%></h1>
+<h1 id="headerTop" autofocus>   <!-- Ensures that when page is newly loaded, it loads at the start of the webpage-->
+<img src="resources/blackpink-background.jpg" id="themePicture" height=auto width=100%></h1>   <!-- Logo with an onclick function that changes theme of the webpage -->
+
+<!-- Title -->
 <h1>Kpop: Are Male Kpop Idol Groups more likely<br> 
   to be successful than Female ones?</h1>
-<h2> An exploratory analysis using sales and other correlational data</h2>
-<p>
+<h2> An exploratory analysis using correlational data</h2>
+
+<p><strong><em>Eugene Lee</em><br>
+  <em>NUS NM2207, AY22/23, Semester 2</em><br>
+  <em>Last Updated: 15 April 2023</em></strong>
+</p>
   <br>
+  <div class="chartBox" id="canvas-containerHello">
+
+    <p>Hi there 👋 Welcome to my webpage! Below, I have made a data story on something I love: Kpop 🎉🎉🎉 </p>
+    <p>Before you begin, feel free to change the theme of the webpage by clicking on the <mark>'BLACKPINK'</mark> logo on the top left!</p>
+    <p>To navigate around the webpage, feel free to open up the side bar by clicking the button beside the logo! </p>
+    <p><img src="resources/lets-go-lisa.gif" id="letsgopic" title="Let's get into this awesome data story!"></p>
+    </div>
+    <br>
+<!-- Introduction Segment: Giving background for the study-->
   <h3 id="headerIntroduction">Introduction</h3>
   <p>
     Let's start with something simple: What is your gender?<br>
-      <button class="buttonSurvey" onclick="GenderRatio1()">Male</button>
-      <button class="buttonSurvey" onclick="GenderRatio2()">Female</button>
-      <button class="buttonSurvey" onclick="GenderRatio3()">Others</button><br>
-      <div id="ratioFact"> In his survey, Lafan (2020) conducted a survey on 1477 individuals who identified as Kpop-fans.</div>
-      <br> Note: In this section, I will also discuss some reasons why Male Kpop idols are assumed to do better in the market versus female Kpop idols.
-    </p>
+      <button class="buttonBP" onclick="GenderRatio1()">Male</button>
+      <button class="buttonBP" onclick="GenderRatio2()">Female</button>
+      <button class="buttonBP" onclick="GenderRatio3()">Others</button><br>
+  </p>
+  <p><div id="ratioFact"> In his survey, Lafan (2020) conducted a survey on 1477 individuals who identified as Kpop-fans.</div></p>
+  <p>An overwhelming majority of current Kpop fans are female (70.2%). Historically, it has been said that male Kpop groups tend to do better, because they appeal to a much larger demographic of Kpop fans.</p>
+      <!-- Pie chart about gender ratio of fans -->
       <div class="chartBox" id="canvas-containerFanRatio">
         <canvas id="myChart"></canvas> 
       </div>
-
+    <p>In fact, female fans have also been said to be more dedicated fans who are more willing to invest time and money, in particular by purchasing albums. Hence, traditionally, it was assumed that male groups dominated physical album sales, while female groups tended to match up better in online streaming and downloads (Yoon, 2022) by appealing to the general public.</p>
+    <p>Album sales are one of the main avenues through which Kpop idol groups make profits, and generates much more revenue than online streams. This has put male groups further ahead in terms of success. To further exacerbate the divide and gender inequality, the types of marketing strategies companies started to use for women in Kpop, caused them to face limits to their autonomy, become over-sexualized, and get compartmentalized into gender roles, in order to appeal to the male gaze (Jonas, 2021).</p>
+    <p>Fortunately, this issue has been brought to light, and perhaps the tides are starting to turn. Increasingly more so today, Kpop fans have become more vocal in fighting for the rights of the female idols they support. Interestingly, what female groups have gained is not just empowerment, but also a new marketing strategy to do better in the industry. These Kpop girl groups have begun <mark>targeting the newer generation</mark>, with concepts emphasizing, and even commodifying, the theme of female empowerment and breaking stereotypes (Sun, Paje & Lee, 2021; to Zhang et al., 2022).</p>
+    <p><img src = "resources/bp-power.gif" title="💥🔫The biggest girl group right now💥🔫" id="powerpic"></p>
+    <p>Has this strategy been successful? Are male Kpop groups still more likely to be more successful? My data story will endeavour to make a preliminary, exploratory study on this. </p>
+    <p>I will approach this question from 3 domains that contribute to a Kpop groups' success: physical album sales, digital success, as well as brand reputation. Let's get straight to it! </p>
+ 
 <br>
+
+  <!-- Segment 2: Physical Sales -->
 <h3 id="headerPhysical">Physical Sales</h3>
-<div class="chartCard">
-  <div class="chartBox" id="canvas-containerPhys1">
+  <p>Since the main advantage that male idols are said to have are in terms of physical album sales, we will first evaluate if it is true. </p>
+  <p>When we observe the 54 albums by Kpop groups with the highest sales in South Korea right now, we see that an overwhelming majority are produced by male groups (43 male versus 11 female). </p>
+<div class="chartCard" id="chartCardPhys1">
+    <!-- Chart comparing Albums with top sales in South Korea -->
+    <div class="chartBox" id="canvas-containerPhys1">
       <canvas id="best-selling-album"></canvas> 
-      <button class="buttonSurvey" id="buttonPhysChange">Toggle View to Unqiue Albums Only</button>
+      <button class="buttonBP" id="buttonPhysChange">Toggle View to Unqiue Albums Only</button>
   </div>
-  <div class="chartBox" id="canvas-containerPhys2">
+    <!-- Chart comparing Artists with the most album sales -->
+    <div class="chartBox" id="canvas-containerPhys2">
     <canvas id="best-selling-artist"></canvas> 
   </div>
 </div>
+  <p>A closer look at the data tells us that many of the albums are made by the same groups, like BTS, who owns the top 4 best selling albums as well. What a powerhouse!😱 When we filter this dataset such that each group only has one unique album, the distribution becomes more even (9 male vs 8 female). The average sales of the top 8 male albums is <mark>2,776,510</mark>, while that of female albums is significantly far behind, at <mark>1,455,182</mark>.</p>
+  <p>This disparity is as jarring when we observe album sales by group. The best selling female group, TWICE, is only in 8th position, <mark>behind 7 other male groups.</mark> </p>
+  <p>Therefore, it appears that male groups are really leaps and bounds ahead of female groups in terms of physical album sales.  </p>
+<br>
 
-
-<p>Note: In this section, I will explain the significance of physical album sales for Kpop idols, and observe physical album sales data to see if male Kpop idols tend to sell more. I will use a bar chart that can toggle between male and female idols.
-</p>
+<!-- Segment 3: Digital Sales-->
   <h3 id="headerDigital">Digital Success</h3>
-  <p>Note: In this section, I will focus on the Kpop idols with the top Spotify streams and Youtube video views. I will use a bar chart to combine the two dimensions, and allow visualization by gender.
-  <br>Additionally, below is a sample of a Map plot which shows the % of female groups in the top 5 most popular Kpop artists (by Google searches) in 7 different countries.
-  <br><br><table id="fanRatioTable">
+  <p>Okay, so we're off to a bad start 😪. Now that we have clarified the disparity in physical sales, let's analyze the digital success of Kpop groups. In this study, I will approach this from two angles: Google searches and Youtube Video views.</p>
+  <p>First, let's have a look at Google searches, which is one indicator of the popularity of a group. The more often you are searched, the greater the presence you have among audiences. The 8 countries below – 3 Western and 5 Asian – are those with some of the greatest number of Kpop audiences.
+          <!--Interactive buttons to see the top 5 groups of 8 different countries-->
+          <br><div class="chartBox" id="canvas-containerInfoPanel">
+          Click to find out the top5️⃣most searched for groups of each country!: <br>
+          <button class="buttonBP" id="buttonAus">Australia</button>
+          <button class="buttonBP" id="buttonUK">UK</button>
+          <button class="buttonBP" id="buttonUS"> USA</button><br>
+          <button class="buttonBP" id="buttonChina"> China</button>
+          <button class="buttonBP" id="buttonIndo">Indonesia</button>
+          <button class="buttonBP" id="buttonJap">Japan</button>
+          <button class="buttonBP" id="buttonPhil"> Philippines</button>
+          <button class="buttonBP" id="buttonKor">South Korea</button>
+          <div id="topGroupList"></div>
+          </div>
+      </p>
+    <!-- Map plot on popularity of male vs female groups in different regions-->
+      <p>Okay, so what? Let's visualize the information on a map to have a better view of the data. Countries with greater female group popularity appear more red, and those with greater male group populairty appear more blue. </p>
+      <p>The greatest possible proportion of female groups in the top 5 searches of any country is only 60%, while that of male groups is at 80%. It appears that there are more countries where male groups are more popular, in <mark>both Western countries and in Asia</mark>. </p>
+    <div class="chartCard" id="chartCardDig1">
     <tr><td><div id="googleSearchCountry"></div></td></tr>
-  </table>
-  Click to find out the top groups of each country: <br>
-  <button class="buttonSurvey" id="buttonAus">Australia</button>
-  <button class="buttonSurvey" id="buttonUK">UK</button>
-  <button class="buttonSurvey" id="buttonUS"> USA</button><br>
-  <button class="buttonSurvey" id="buttonChina"> China</button>
-  <button class="buttonSurvey" id="buttonIndo">Indonesia</button>
-  <button class="buttonSurvey" id="buttonJap">Japan</button>
-  <button class="buttonSurvey" id="buttonPhil"> Philippines</button>
-  <button class="buttonSurvey" id="buttonKor">South Korea</button>
-  <div id="topGroupList"></div>
-</p>
+    </div>
 
-<div class="chartCard">
-  <div class="chartBox" id="canvas-containerDig2">
-      <canvas id="youtube-views-by-video" width="800" height="400"></canvas> 
+  <!--Interactive Scatter Chart to analyze the Most viewed Youtube Videos -->
+    <p>How about Youtube Views? Youtube is one of the main platforms where Kpop idols, and artists across the world, present their products, and even make money from streams and advertisements. </p>
+    <p>Let's have a look at the scatter chart, which maps the top 51 most-viewed Youtube videos by unique Kpop groups, the number of streams per video, and each video's number of daily increases in views. </p>
+  <div class="chartCard" id="chartCardDig2">
+    <div class="chartBox" id="canvas-containerDig2">
+      <canvas id="youtube-views-by-video" height="400px" width="800px"></canvas> 
+      <button class="buttonBP" id="youtubeAll">All Videos</button>
+      <button class="buttonBP" id="youtubeF">Only Female Videos</button>
+      <button class="buttonBP" id="youtubeM">Only Male Videos</button>
+      <button class="buttonBP" id="youtubeAvg">Averages Only</button>
+    </div>
+  </div>
+  <p>As usual, BTS and BLACKPINK have a staggeringly larger number of views on their music videos (MVs) versus other groups. As for the other groups, there seems to be a <mark>generally similar distribution</mark>, though there are slightly more female groups with a higher number of daily increases in views. </p>
+  <p>To better compare the data, we can compare the averages of the male and female data. At <mark>301 million</mark> average total views and <mark>130,429</mark> daily increases, male average values appear significantly lower than those of females, at <mark>314 million</mark> total views and <mark>201,818</mark> daily increases. </p>
+  <p>Overall, for the domain of digital presence, female groups tend to do better on YouTube, though on Google searches, male groups are doing better. How do we make sense of this? While female groups do not seem to perform exceedingly better in digital presence, we have found evidence that they are at least <mark>not falling behind too greatly</mark>, which was the case for physical sales. Male groups' larger number of more committed fans may also be helping to boost their Youtube streams and Google searches. On the other hand, female groups may still do better in YouTube because they can draw in a larger number of viewers from the general public.</p>
+  <br>
+  <!-- Segment 4: Analysis of Brand Reputation Index Scores -->
+<h3 id="headerBranding">Branding</h3>
+  <p>The third domain is that of brand reputation. I have managed to obtain the Brand Reputation Index of Kpop groups in February 2023. </p>
+  <p>This index is constructed using big data by the Korean Business Research Institute, and “rankings are determined by collecting data on <mark>consumer participation, media coverage, interaction, and community indexes</mark> of K-Pop groups over the last month” (Koreaboo, 2023)(not the best website to cite from, I know, but what better place is there to get facts about Kpop?🤡). Hence, it is a more general measure of the popularity of Kpop groups, among current audiences. </p>
+  <p>Of the 100 most popular artists, I have extracted the data for just Kpop groups. Let's have a look at the chart:</p>
+  <!-- Horizontal Bar Chart comparing the top-scoring groups -->
+  <div class="chartCard" id="chartCardBrand1">
+    <div class="chartBox" id="canvas-containerBrand1" height="400px" width="680px">
+        <canvas id="brandRepChart"></canvas> 
+    </div>
+</div>
+  <p>Evidently, there are <mark>many more female groups (17 female to 6 male)</mark> who have ranked in the top 100. Furthermore, there are quite a number of female groups amongst the top few rankings. This brings us back to the general trend where female groups may tend to do better among the general public. In particular, they have more media coverage, which may also indicate greater digital success outside of Google searches and YouTube. </p>
+  <p>Brand reputation may also point to the visibility of a group, and their level of activities in brand endorsements, which is also a major source of revenue.  Even if female groups may not sell as many physical albums, they could possibly be earning as much, or more profits, via brand deals. </p>
+  <br>
+
+  <!-- Segment 5: Deeper analysis of Top 5 Male/Female groups in Market Branding-->
+<h3 id="headerDisucssion">Discussion</h3>
+  <p>While we have found that the trends in physical sales and digital presence for Kpop groups is mostly consistent with prior findings, to better evaluate if up-and-coming female groups are gaining more success with their images of female empowerment, we can perform a holistic analysis of popular groups today. Hence, I have compiled data on the top 5 male and female groups with the highest brand reputation index score.🏆 </p>
+  <p>In the radar chart below, for each domain, each group is scored by the proportion of their own actual statistic compared to that of the best-performing group in the domain (For example, BTS has the most YouTube views, hence their score is 100. NewJeans YouTube views' are 19.55% that of BTS's). 
+  <br><em>Note: Because NCT is comprised of many subunits, NCT Dream was chosen as its best performing one, for ease of analysis.</em></p>
+
+<div class="chartCard" id="chartCardDisc1">
+  <!-- Radar chart comparing the 10 groups across 5 different domains-->
+  <div class="chartBox" id="canvas-containerDisc1" >
+      <canvas id="domainChart" height="500px" width="700px"></canvas> 
+      <br>
+  </div>
+  <!-- Interactive panel of Buttons to allow interactivity of the radar chart + generate different statistics -->
+  <div class="chartBox" id="canvas-containerInfoPanel">
+    <button class="buttonBP" id="buttonNJ">NewJeans</button>
+    <button class="buttonBP" id="buttonBP">BLACKPINK</button>
+    <button class="buttonBP" id="buttonIVE">IVE</button>
+    <button class="buttonBP" id="buttonLS">LE SSERAFIM</button>
+    <button class="buttonBP" id="buttonH1">H1-KEY</button>
+    <button class="buttonBP" id="buttonBTS">BTS</button>
+    <button class="buttonBP" id="buttonEXO">EXO</button>
+    <button class="buttonBP" id="buttonSVT">SEVENTEEN</button>
+    <button class="buttonBP" id="buttonBB">BIGBANG</button>
+    <button class="buttonBP" id="buttonNCT">NCT DREAM</button>
+    <br><br>
+    <div id = "groupDomainInfo"> Click to find out more about each group! </div><br><br>
+    <button class="buttonBP" id="buttonMaleDomain">Male Group Average </button>
+    <button class="buttonBP" id="buttonFemaleDomain">Female Group Average </button>
   </div>
 </div>
 
-<h3 id="headerBranding">Branding</h3>
-<p>Note: In this section, I will observe the male:female ratio in the top ranking Kpop idols based on a Market Branding score, devised by Korean experts. I will probably use a scatter plot comparing score, with points for male and female idols coloured differently.
-</p>
-<h3 id="headerDisucssion">Discussion</h3>
-<p>Note: Here, I will consolidate my interpretations of the data and disucss the implications of my findings.
-</p>
+  <p>The most prominent difference, is in the ages of the groups. On average, the female groups have only been around for <mark>2.4 years</mark>, a stark contrast from male groups, at <mark>10.6 years</mark>. </p>
+  <p>This could mean many things. Male groups could have more committed, perhaps with a greater proportion of female, fans that stick around to keep the groups' popularity up in the long-term. Meanwhile female groups may also achieve high popularity, but are more short-lived and quickly replaced by other female groups. Alternatively, it could mean that the new strategy of marketing themselves as empowered women, is working. Indeed, all 5 female groups here promote values of confidence and independence, albeit in different ways. </p>
+  <p>Anyhow, we see that trends identified in earlier sections still remain largely true. On average, <mark>female groups are doing much better in brand reputation</mark>, while <mark>male groups are much more ahead in terms of album sales</mark>. There does not appear to be a significant difference in terms of YouTube video streams. </p>
+  <br>
+
+<!-- Segment 6: Discussion on the study's limitations and recommendations for future work -->
+<h3 id="headerLimitations">Limitations and Recommendations</h3>
+  <p>It is important to note that this data story is only a preliminary, exploratory venture into the research topic. There are multiple limitations: </p>
+  <table id="LRtable">
+    <tr id="LRtable-row">
+      <th class="LRtable-TH">Limitations</th>
+      <th class="LRtable-TH">Recommendations</th>
+    </tr>
+    <tr id="LRtable-row">
+      <td id="LRtable-td"><mark>Lack of official datasets</mark>. <br>Unlike other topics, there is no large publicly available dataset which collates information on Kpop groups' performance over multiple domains. Data had to be manually drawn from various sources online, some more credible than others.</td>
+      <td id="LRtable-td">Future work could improve on the study by using larger datasets with more Kpop groups. This will improve reliability, accuracy and generalizability of analyses.</td>
+    </tr>
+    <tr id="LRtable-row">
+      <td id="LRtable-td">Kpop idols comprise both soloists and groups, the former of which does take up a significant proportion. <mark>Only kpop groups were analyzed</mark> in this study, due to time and resource constraint, and because amongst solo artists, there is a larger grey area between those who belong to “Kpop” and those who are categorized otherwise, for example as "trot" singers.</td>
+      <td id="LRtable-td">Future work could develop a method to differentiate between soloists, and include them in analyses, so as to get more accurate findings of trends.</td>
+    </tr>
+    <tr id="LRtable-row">
+      <td id="LRtable-td">The success of Kpop groups can be determined by many more domains besides the 3 identified in this study.</td>
+      <td id="LRtable-td">To gain a more complete view of the research question, other domains can be studied, including:
+        <ul>
+          <li><mark>Revenue generated</mark>: this is a more obvious factor to compare groups' success, though actual values will be difficult to obtain.</li>
+          <li>Actual level of <mark>brand endorsements</mark></li>
+          <li>Brand reputation index data over a longer period of time</li>
+          <li>Social media analytics (eg likes and dislikes ratio), on <mark>more platforms</mark> besides Google and YouTube. </li>
+        </ul>
+      </td>
+      <tr id="LRtable-row">
+        <td id="LRtable-td">The success of Kpop groups could <mark>vary across different regions</mark>. </td>
+        <td id="LRtable-td">Possibilities for future work:
+          <ul>
+            <li><mark>Data outside of Korea</mark> (i.e for album sales and brand reputation index) could be used.</li>
+            <li><mark>Regional comparisons</mark> can be made for domains besides Google searches.</li>
+          </ul>
+        </td>      
+    </tr>
+  </table>
+  <br>
+
+<!-- Segment 7: Concluding notes on the data story -->
+<h3 id="headerConclusion">Conclusion</h3>
+  <p>A Kpop group's success is <mark>multi-faceted and reliant on many different domains</mark>. Male groups may do better in terms of physical album sales, but female groups are ahead in brand reputation. However, there is some indication that newer female groups today, with images of female empowerment, are excelling, and <mark>could potentially catch up</mark> with male groups in physical sales, or even exceed male groups in the  domains other than brand reputation as well.  </p>
+  <p>In the greater scheme of things, this is just one way in which society is moving towards achieving <mark>gender equality</mark>, at least in the entertainment industry. Women are becoming empowered, and the public is increasingly supportive of their endeavours. As Kpop becomes a more popular phenomenon, and a bigger industry, in the world, more studies on gender equality within the sector is imperative. </p>
+  <p>This concludes my data story. Thanks for reading till the end, and do give support to male and female Kpop groups regardless of their gender! ⭐️</p>
+  <p><img src = "resources/bp-thankyou.gif" id="thankpic" title="Hope you had fun reading the data story!"></p>
+  <br>
+
+  <!-- Segment 8: References, in APA style -->
 <h3 id="headerReferences">References</h3>
 <p class="apa-reference">
   Berry, M.. (2020, August 12). These are the 5 most popular K-Pop groups of 8 different countries based on google searches. <em>Koreaboo</em>. https://www.koreaboo.com/lists/5-popular-kpop-groups-8-different-countries-based-google-searches/
+</p>
+<p class="apa-reference">
+  Kim, C. (2023). Top 100 Korean singer brand reputation rankings in February 2023. <em>Kpoppost</em>. Retrieved March 23, 2023, from https://www.kpoppost.com/top-100-korean-singer-brand-reputation-rankings-in-february-2023-2/ 
+</p>
+<p class="apa-reference">
+  Koreaboo. (2022). These 27 K-Pop girl groups have massively different gender ratios of fans buying their albums. April 14, 2023, from https://www.koreaboo.com/lists/kpop-girl-groups-massively-different-gender-ratios-fans-buying-albums/ 
+</p>
+<p class="apa-reference">
+  Koreaboo. (2023). The top 100 K-Pop artists brand reputation rankings For March 2023. Retrieved April 14, 2023, from https://www.koreaboo.com/lists/kpop-artists-top-100-brand-reputation-rankings-march-2023/ 
+</p>
+<p class="apa-reference">
+  koreansalestwt. (2023). BLACKPINK sales summary. Retrieved April 13, 2023, from https://koreansalestwt.blogspot.com/2020/09/blackpink.html 
+</p>
+<p class="apa-reference">
+  koreansalestwt. (2023). BIGBANG sales summary. Retrieved April 13, 2023, from https://koreansalestwt.blogspot.com/2021/03/bigbang-sales-summary.html 
+</p>
+<p class="apa-reference">
+  koreansalestwt. (2023). BTS sales summary. Retrieved April 13, 2023, from https://koreansalestwt.blogspot.com/2020/09/bts.html 
+</p>
+<p class="apa-reference">
+  koreansalestwt. (2023). EXO sales summary. Retrieved April 13, 2023, from https://koreansalestwt.blogspot.com/2020/09/exo.html 
+</p>
+<p class="apa-reference">
+  koreansalestwt. (2023). H1-Key sales summary. Retrieved April 13, 2023, from https://koreansalestwt.blogspot.com/2023/03/h1-key-sales-summary.html 
+</p>
+<p class="apa-reference">
+  koreansalestwt. (2023). IVE sales summary. Retrieved April 13, 2023, from https://koreansalestwt.blogspot.com/2022/05/ive-sales-summary.html 
+</p>
+<p class="apa-reference">
+  koreansalestwt. (2023). LE SSERAFIM sales summary. Retrieved April 13, 2023, from https://koreansalestwt.blogspot.com/2022/11/le-sserafim-sales-summary.html 
+</p>
+<p class="apa-reference">
+  koreansalestwt. (2023). NewJeans sales summary. Retrieved April 13, 2023, from https://koreansalestwt.blogspot.com/2023/01/newjeans-sales-summary.html 
+</p>
+<p class="apa-reference">
+  koreansalestwt. (2023). NCT DREAM sales summary. Retrieved April 13, 2023, from https://koreansalestwt.blogspot.com/2020/09/nct-dream.html 
+</p>
+<p class="apa-reference">
+  koreansalestwt. (2023). SEVENTEEN sales summary. Retrieved April 13, 2023, from https://koreansalestwt.blogspot.com/2020/09/seventeen.html 
+</p>
+<p class="apa-reference">
+  Kpop Daisuki (n.d.). Korean music - statistics. Retrieved March 13, 2023, from https://kpop.daisuki.com.br/kpop_statistics.html#bsa 
+</p>
+<p class="apa-reference">
+  kworb.net (n.d.) Most viewed music videos by korean artists. Retrieved March 23, 2023, from  https://kworb.net/youtube/topvideos_korean.html 
+</p>
+<p class="apa-reference">
+  Jonas, L. (2021). Crafted for the Male Gaze: Gender Discrimination in the K-Pop Industry. <em>Journal of International Women's Studies, 22</em>(7), 3-18. 
 </p>
 <p class="apa-reference">
 Laffan, D. A. (2021). Positive psychosocial outcomes and fanship in K-pop fans: A social identity theory perspective. <em>Psychological Reports, 124</em>(5), 2272-2285.
@@ -112,4 +310,47 @@ Laffan, D. A. (2021). Positive psychosocial outcomes and fanship in K-pop fans: 
 <p class="apa-reference">
   Rahmi, F. (2021, February 1). Exploratory data of K-pop idols. <em>The Startup</em>. https://medium.com/swlh/exploratory-data-of-k-pop-idols-8693b44ac312# 
 </p>
+<p class="apa-reference">
+  Sun, Q., Paje, D., & Lee, H. (2022). “Female empowerment is being commercialized”: online reception of girl crush trend among feminist K-pop fans. <em>Feminist Media Studies</em>, 1-14.
+</p>
+<p class="apa-reference">
+  Yoon, S.Y. (2022, December 16). Girl group gets the ears, boy bands get the dollars <em>Korea JoongAng Daily</em>. https://koreajoongangdaily.joins.com/2022/12/16/business/industry/Korea-Kpop-Circle-Chart/20221216154245715.html
+</p>
+<p class="apa-reference">
+  YouTube. (n.d.) BIGBANG. <em>Music Charts & Insights</em>. Retrieved March 23, 2023, from https://charts.youtube.com/artist/%2Fm%2F049g_gp 
+</p>
+<p class="apa-reference">
+  YouTube. (n.d.) BLACKPINK. <em>Music Charts & Insights</em>. Retrieved March 23, 2023, from https://charts.youtube.com/artist/%2Fg%2F11byzf3gtr 
+</p>
+<p class="apa-reference">
+  YouTube. (n.d.) BTS. <em>Music Charts & Insights</em>. Retrieved March 23, 2023, from https://charts.youtube.com/artist/%2Fm%2F0w68qx3 
+</p>
+<p class="apa-reference">
+  YouTube. (n.d.) EXO. <em>Music Charts & Insights</em>. Retrieved March 23, 2023, from https://charts.youtube.com/artist/%2Fm%2F0h_dkd6 
+</p>
+<p class="apa-reference">
+  YouTube. (n.d.) H1-KEY. <em>Music Charts & Insights</em>. Retrieved March 23, 2023, from https://charts.youtube.com/artist/%2Fg%2F11rmqpwgb4 
+</p>
+<p class="apa-reference">
+  YouTube. (n.d.) IVE. <em>Music Charts & Insights</em>. Retrieved March 23, 2023, from https://charts.youtube.com/artist/%2Fg%2F11pckstzmg 
+</p>
+<p class="apa-reference">
+  YouTube. (n.d.) LE SSEARFIM. <em>Music Charts & Insights</em>. Retrieved March 23, 2023, from https://charts.youtube.com/artist/%2Fg%2F11rv3m50dz 
+</p>
+<p class="apa-reference">
+  YouTube. (n.d.) NCT DREAM. <em>Music Charts & Insights</em>. Retrieved March 23, 2023, from https://charts.youtube.com/artist/%2Fg%2F11hb7f8pmw
+</p>
+<p class="apa-reference">
+  YouTube. (n.d.) NewJeans. <em>Music Charts & Insights</em>. Retrieved March 23, 2023, from https://charts.youtube.com/artist/%2Fg%2F11s54cf6vn 
+</p>
+<p class="apa-reference">
+  YouTube. (n.d.) SEVENTEEN. <em>Music Charts & Insights</em>. Retrieved March 23, 2023, from https://charts.youtube.com/artist/%2Fm%2F0_h1p_y 
+</p>
+<p class="apa-reference">
+  Wikipedia (n.d.). List of best-selling albums in South Korea. Retrieved March 13, 2023, from https://en.wikipedia.org/wiki/List_of_best-selling_albums_in_South_Korea 
+</p>
+<p class="apa-reference">
+  Zhang, Y., Chen, L., Chen, J., Mi, X., & Zhu, S. (2022, December). Redefining Womanhood in Generation Z: An Analysis of Gender Representation and Awareness in K-pop Culture. In <em>2022 5th International Conference on Humanities Education and Social Sciences (ICHESS 2022)</em> (pp. 2868-2877). Atlantis Press.
+</p>
+
 </body>

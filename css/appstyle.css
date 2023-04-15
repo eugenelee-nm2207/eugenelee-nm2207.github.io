@@ -1,7 +1,4 @@
-
-/*html {
-    scroll-behavior: smooth;
-  }*/
+/* -- general styling of webpage -- */
 body {
     background: palevioletred;
     --topNavBar-height: 60px; /*declaring a CSS variable*/
@@ -12,8 +9,8 @@ body {
     text-align:center;
 }
 p {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
 } 
 h1 {
     text-align: center;
@@ -111,6 +108,7 @@ img {
 .miscNavBarRow { /*if I want to add borders to the links in the top nav bar row.*/
     border: 2px solid rgba(0,0,0,0);
     border-radius:5px;
+    width: 33%;
 }
 .miscNavBarRow:hover { /* if I want to add colour when links in top nav bar are hovered over -- */
     background-color: rgba(0, 0, 0, 0);
@@ -164,40 +162,26 @@ img {
     display: block; 
 }
 
-/*not using container1 right now*/
-.container1 { /*from https://linuxhint.com/how-to-make-html-container-box-in-html/ */
-    display: grid;
-    grid-template-columns: auto auto;
-    /*background-color: #40966c;*/
-    padding: 15px;
-    gap:10px;
-}
-.container1>div {
-    /*background-color: #c4d1cb;*/
-    text-align: center;
-    padding: 20px auto;
-    font-size: 15px;
-}
-#fanRatioTable {
-    width:auto;
-    height: 80px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-.highlight {
+/* styling all text with the highlight property */
+.highlight{
     background-color:black;
     text-decoration: underline;
     color: palevioletred;
 }
-.buttonSurvey {
+mark {
+    background-color:black;
+    color: palevioletred;
+}
+
+/* -- general button design -- */
+.buttonBP { /*BP stands for BLACKPINK*/
     border-radius: 9px;
     background-color: black;
     color: palevioletred;
     font-size: 18px;
     font-family: serif;
 }
-.buttonSurvey:hover {
+.buttonBP:hover {
     background-color: pink;
     color: black;
 }
@@ -205,7 +189,9 @@ img {
 #googleSearchCountry {
     align-items: center;
 }
-.apa-reference {
+
+/* -- creates hanging indent for APA citations -- */
+.apa-reference { 
     margin-left: 10%;
     margin-right: 10%;
     padding-left: 36px;
@@ -213,8 +199,8 @@ img {
     text-align: left;
 }
 
-/* testing chart.js template, from https://www.chartjs3.com/docs/chart/getting-started/*/
-.chartMenu {
+/* -- chart.js template for containers for charts--  from https://www.chartjs3.com/docs/chart/getting-started/*/
+.chartMenu { 
     width: 100vw;
     height: 40px;
     background: #1A1A1A;
@@ -224,15 +210,17 @@ img {
     padding: 10px;
     font-size: 20px;
   }
-  .chartCard {
-    width: 100vw;
+  .chartCard { /*creates spacing between chart container and other surrounding elements in the webpage */
+    width: 90%;
     height: calc(100vh - 40px);
-    background: rgba(54, 162, 235, 0);
+    background: rgba(54, 162, 235, 0); /*setting transparency to 1 helps me to test out different heights for the chart card*/
     display: flex; /* allows us to place chartBoxes side by side*/
     align-items: center;
     justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .chartBox {
+  .chartBox { /*chart canvas is contained within each chartbox*/
     width: 700px;
     padding: 20px;
     border-radius: 20px;
@@ -241,11 +229,94 @@ img {
     margin-left: auto;
     margin-right: auto;
   }
+
+/* -- styling chartBox for Pie Chart on Gender Ratio of fans */
   #canvas-containerFanRatio {
     width: 300px;
     height: 300px;
   }
+
+/* -- styling chartBox for Bar Charts on Physical Album Sales -- */
 #canvas-containerPhys1, #canvas-containerPhys2 {
-    width: 500px;
-    height: 550px;
+    width: 650px;
+    height: 550px; 
   }
+#chartCardPhys1 {
+    height: 630px;
+}
+
+/* -- styling chartBox for Plotly Chlorpleth on Google Searches -- */
+#chartCardDig1 {
+    height:540px;
+  }
+/* -- styling chartBox for Scatter Chart on most viewed Youtube Videos -- */
+  #canvas-containerDig2 {
+   width: 1000px;
+   height: 450px; 
+  }
+  #chartCardDig2 {
+    height:510px;
+  }
+
+/* -- styling chartBox for Brand Reputation Index horizontal bar chart -- */
+  #canvas-containerBrand1 {
+    width: 700px;
+    height: 500px; 
+   }
+   #chartCardBrand1 {
+    height: 550px
+   }
+
+/* -- styling chartBox for radar Chart to compare the 10 groups -- */
+#canvas-containerDisc1 {
+    height: 600px;
+    width: auto;
+} 
+/* -- styling chartBox for interactive panel beside radar chart -- */
+#canvas-containerInfoPanel {
+    height: auto; /* so that the box can adjust automatically to the window size while still containing the tex within*/
+    width: 400px;
+} 
+#chartCardDisc1 { /* so that even if interactive panel changes shape/size, it will not eat into space of other segments*/
+    height: 880px;
+    background: rgba(54, 162, 235, 0);
+}
+
+/*-- styling for table in limitations and recommendations --*/
+#LRtable {
+    width: 80%;
+    margin-left: auto;
+    margin-right:auto;
+    border: 1px solid;
+    border-color: white;
+}
+#LRtable-row {
+    border-bottom: 1px solid #ddd;
+    border: 1px solid;
+    border-color: white;
+}
+#LRtable-row:hover {
+    background-color: rgb(219, 90, 127);
+}
+.LRtable-TH {
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    text-decoration: underline;
+}
+#LRtable-td {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    width: 50%;
+    border: 1px solid;
+    border-color: white;
+    text-align: left;
+    padding: 10px;
+}
+
+/* -- to adjsut the size of decorative pictures -- */
+#powerpic, #thankpic {
+    height: 300px;
+    width: auto;
+}
+

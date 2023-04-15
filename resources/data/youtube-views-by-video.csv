@@ -1,51 +1,51 @@
-No.,Gender,Artist,Video,Streams,Daily Increases,,Streams (in millions),Streams (in millions)
-1,Female,BLACKPINK,????? (DDU-DU DDU-DU)? M/V,2034167526,523489,red,2034.167526,2034.167526
-2,Male,BTS ,Dynamite' Official MV,1664977992,480219,blue,1664.977992,1664.977992
-3,Female,TWICE,"""What is Love?"" M/V",707037400,183756,red,707.0374,707.0374
-4,Male,BIGBANG ,??? (BANG BANG BANG) M/V,628965138,115633,blue,628.965138,628.965138
-5,Male,iKON ,???? ??(LOVE SCENARIO)? M/V,619140543,135617,blue,619.140543,619.140543
-6,Female,MOMOLAND ,BBoom BBoom (??),596956428,104598,red,596.956428,596.956428
-7,Female,ITZY ,"""WANNABE"" M/V ",493768890,159102,red,493.76889,493.76889
-8,Male,GOT7 ,"""Just right(? ??)"" M/V",41775025,240721,blue,41.775025,41.775025
-9,Male,Stray Kids,"""???(God's Menu)"" M/V",387294330,215888,blue,387.29433,387.29433
-10,Female,Red Velvet,Bad Boy' MV,38098035,763204,red,38.098035,38.098035
-11,Female,MAMAMOO,HIP [MV],376694575,132892,red,376.694575,376.694575
-12,Male,GD X TAEYANG,GOOD BOY M/V,35286691,449959,blue,35.286691,35.286691
-13,Male,EXO ,Ko Ko Bop' MV,34447446,136121,blue,34.447446,34.447446
-14,Female,2NE1,?? ?? ? ??(I AM THE BEST) M/V,33911949,262835,red,33.911949,33.911949
-15,Female,NiziU ,Make you happy M/V,30622272,734641,red,30.622272,30.622272
-16,Female,Girls' Generation,Gee' MV,30563048,535624,red,30.563048,30.563048
-17,Female,EVERGLOW,DUN DUN MV,275455922,50570,red,275.455922,275.455922
-18,Male,NCT U,Make A Wish (Birthday Song)' MV,267795079,64554,blue,267.795079,267.795079
-19,Female,aespa ,Next Level' MV,261672148,71500,red,261.672148,261.672148
-20,Male,EXO-K,??(Overdose)' MV,248193904,20936,blue,248.193904,248.193904
-21,Male,SEVENTEEN,?? ?? ?? (Don't Wanna Cry),246841616,64488,blue,246.841616,246.841616
-22,Male,PENTAGON,Shine(???),244935791,24719,blue,244.935791,244.935791
-23,Male,SUPER JUNIOR,Mr. Simple' MV,21965517,628994,blue,21.965517,21.965517
-24,Female,(G)I-DLE, 'TOMBOY' Official Music Video,216682054,269599,red,216.682054,216.682054
-25,Female,IVE ,LOVE DIVE' MV,200493316,217184,red,200.493316,200.493316
-26,Male,WINNER ,REALLY REALLY' M/V,19207622,231278,blue,19.207622,19.207622
-27,Female,4MINUTE ,??(Crazy),186571626,45355,red,186.571626,186.571626
-28,Female,IZ*ONE,????? (La Vie en Rose) MV,18033715,323239,red,18.033715,18.033715
-29,Male,TXT , '5? 53?? ???? ??? ?? ?' Official MV,176181970,52594,blue,176.18197,176.18197
-30,Male,NCT DREAM,(Hot Sauce)' MV,172894827,41282,blue,172.894827,172.894827
-31,Male,NCT 127,?? (??; Kick It)' MV,171661449,43852,blue,171.661449,171.661449
-32,Male,Wanna One,???? (Energetic) MV,161051986,16638,blue,161.051986,161.051986
-33,Male,SHINee ,Ring Ding Dong' MV,161021793,33233,blue,161.021793,161.021793
-34,Female,LE SSERAFIM,FEARLESS OFFICIAL M/V,148122754,136715,red,148.122754,148.122754
-35,Female,Weeekly,After School,14784446,357884,red,14.784446,14.784446
-36,Female,f(x),Electric Shock' MV,140276936,8042,red,140.276936,140.276936
-37,Female,SISTAR,??? Music Video (Alone),138701524,20441,red,138.701524,138.701524
-38,Male,MONSTAX,??? (HERO) Rooftop Ver.,132264672,8373,blue,132.264672,132.264672
-39,Female,IRENE & SEULGI,Monster' MV,131870148,21438,red,131.870148,131.870148
-40,Male,NU'EST,FACE(???),130499985,21155,blue,130.499985,130.499985
-41,Male,NCT 2020,RESONANCE' MV,124167721,23124,blue,124.167721,124.167721
-42,Female,Wonder Girls,"""NOBODY (Eng. Ver)"" M/V",123562948,27953,red,123.562948,123.562948
-43,Co-ed,Trouble Maker,Trouble Maker' M/V,122544462,23521,green,122.544462,122.544462
-44,Male,SuperM ,?Jopping? MV,122125606,14841,blue,122.125606,122.125606
-45,Male,BEAST ,FICTION' (Official Music Video),121443326,29077,blue,121.443326,121.443326
-47,Male,X1,FLASH' MV,12040247,36998,blue,12.040247,12.040247
-48,Female,BOL4,Some(? ???),119274272,39306,red,119.274272,119.274272
-49,Female,KARA ,STEP M/V,119223814,20870,red,119.223814,119.223814
-50,Female,EXID,???' (UP&DOWN) MV,118898194,11224,red,118.898194,118.898194
-51,Female,SISTAR19,Ma Boy Music Video,115630854,23989,red,115.630854,115.630854
+No.,Gender,Artist,Video2,Streams,Daily Increases,Color,Streams (in millions),Streams (in millions),ArtistVideoGender,,,,,,
+1,Female,BLACKPINK,BLACKPINK  DDU-DU DDU-DU M/V (Female),2034167526,523489,red,2034.167526,2034.167526,BLACKPINK - DDU-DU DDU-DU M/V (Female),,,,,,????? (DDU-DU DDU-DU)? M/V
+2,Male,BTS ,BTS - Dynamite Official MV (Male),1664977992,480219,blue,1664.977992,1664.977992,BTS - Dynamite Official MV (Male),,,,,,Dynamite' Official MV
+3,Female,TWICE,TWICE - What is Love? M/V (Female),707037400,183756,red,707.0374,707.0374,TWICE - What is Love? M/V (Female),,,,,,"""What is Love?"" M/V"
+4,Male,BIGBANG ,BIGBANG -  BANG BANG BANG M/V (Male),628965138,115633,blue,628.965138,628.965138,BIGBANG -  BANG BANG BANG M/V (Male),,,,,,??? (BANG BANG BANG) M/V
+5,Male,iKON ,iKON - LOVE SCENARIO M/V (Male),619140543,135617,blue,619.140543,619.140543,iKON - LOVE SCENARIO M/V (Male),,,,,,???? ??(LOVE SCENARIO)? M/V
+6,Female,MOMOLAND ,MOMOLAND - BBoom BBoom (Female),596956428,104598,red,596.956428,596.956428,MOMOLAND - BBoom BBoom (Female),,,,,,BBoom BBoom (??)
+7,Female,ITZY ,ITZY - WANNABE M/V (Female),493768890,159102,red,493.76889,493.76889,ITZY - WANNABE M/V (Female),,,,,,"""WANNABE"" M/V "
+8,Male,GOT7 ,GOT7 - Just right M/V (Male),41775025,240721,blue,41.775025,41.775025,GOT7 - Just right M/V (Male),,,,,,"""Just right(? ??)"" M/V"
+9,Male,Stray Kids,Stray Kids - God's Menu M/V (Male),387294330,215888,blue,387.29433,387.29433,Stray Kids - God's Menu M/V (Male),,,,,,"""???(God's Menu)"" M/V"
+10,Female,Red Velvet,Red Velvet - Bad Boy MV (Female),38098035,763204,red,38.098035,38.098035,Red Velvet - Bad Boy MV (Female),,,,,,Bad Boy' MV
+11,Female,MAMAMOO,MAMAMOO - HIP MV (Female),376694575,132892,red,376.694575,376.694575,MAMAMOO - HIP MV (Female),,,,,,HIP [MV]
+12,Male,GD X TAEYANG,GD X TAEYANG - GOOD BOY M/V (Male),35286691,449959,blue,35.286691,35.286691,GD X TAEYANG - GOOD BOY M/V (Male),,,,,,GOOD BOY M/V
+13,Male,EXO ,EXO - Ko Ko Bop MV (Male),34447446,136121,blue,34.447446,34.447446,EXO - Ko Ko Bop MV (Male),,,,,,Ko Ko Bop' MV
+14,Female,2NE1,2NE1 - I AM THE BEST M/V (Female),33911949,262835,red,33.911949,33.911949,2NE1 - I AM THE BEST M/V (Female),,,,,,?? ?? ? ??(I AM THE BEST) M/V
+15,Female,NiziU ,NiziU - Make you happy M/V (Female),30622272,734641,red,30.622272,30.622272,NiziU - Make you happy M/V (Female),,,,,,Make you happy M/V
+16,Female,Girls' Generation,Girls' Generation - Gee MV (Female),30563048,535624,red,30.563048,30.563048,Girls' Generation - Gee MV (Female),,,,,,Gee' MV
+17,Female,EVERGLOW,EVERGLOW - DUN DUN MV (Female),275455922,50570,red,275.455922,275.455922,EVERGLOW - DUN DUN MV (Female),,,,,,DUN DUN MV
+18,Male,NCT U,NCT U - Make A Wish (Birthday Song) MV (Male),267795079,64554,blue,267.795079,267.795079,NCT U - Make A Wish (Birthday Song) MV (Male),,,,,,Make A Wish (Birthday Song)' MV
+19,Female,aespa ,aespa - Next Level MV (Female),261672148,71500,red,261.672148,261.672148,aespa - Next Level MV (Female),,,,,,Next Level' MV
+20,Male,EXO-K,EXO-K - Overdose MV (Male),248193904,20936,blue,248.193904,248.193904,EXO-K - Overdose MV (Male),,,,,,??(Overdose)' MV
+21,Male,SEVENTEEN,SEVENTEEN - Don't Wanna Cry MV (Male),246841616,64488,blue,246.841616,246.841616,SEVENTEEN - Don't Wanna Cry MV (Male),,,,,,?? ?? ?? (Don't Wanna Cry)
+22,Male,PENTAGON,PENTAGON - Shine MV (Male),244935791,24719,blue,244.935791,244.935791,PENTAGON - Shine MV (Male),,,,,,Shine(???)
+23,Male,SUPER JUNIOR,SUPER JUNIOR -Mr. Simple MV (Male),21965517,628994,blue,21.965517,21.965517,SUPER JUNIOR -Mr. Simple MV (Male),,,,,,Mr. Simple' MV
+24,Female,(G)I-DLE,(G)I-DLE -  TOMBOY Official Music Video (Female),216682054,269599,red,216.682054,216.682054,(G)I-DLE -  TOMBOY Official Music Video (Female),,,,,, 'TOMBOY' Official Music Video
+25,Female,IVE ,IVE - LOVE DIVE MV (Female),200493316,217184,red,200.493316,200.493316,IVE - LOVE DIVE MV (Female),,,,,,LOVE DIVE' MV
+26,Male,WINNER ,WINNER - REALLY REALLY M/V (Male),19207622,231278,blue,19.207622,19.207622,WINNER - REALLY REALLY M/V (Male),,,,,,REALLY REALLY M/V
+27,Female,4MINUTE ,4MINUTE - Crazy MV (Female),186571626,45355,red,186.571626,186.571626,4MINUTE - Crazy MV (Female),,,,,,??(Crazy)
+28,Female,IZ*ONE,IZ*ONE - La Vie en Rose MV (Female),18033715,323239,red,18.033715,18.033715,IZ*ONE - La Vie en Rose MV (Female),,,,,,????? (La Vie en Rose) MV
+29,Male,TXT ,TXT - CROWN MV (Male),176181970,52594,blue,176.18197,176.18197,TXT - CROWN MV (Male),,,,,, '5? 53?? ???? ??? ?? ?' Official MV
+30,Male,NCT DREAM,NCT DREAM - Hot Sauce MV (Male),172894827,41282,blue,172.894827,172.894827,NCT DREAM - Hot Sauce MV (Male),,,,,,(Hot Sauce)' MV
+31,Male,NCT 127,NCT 127 - Kick It MV (Male),171661449,43852,blue,171.661449,171.661449,NCT 127 - Kick It MV (Male),,,,,,?? (??; Kick It)' MV
+32,Male,Wanna One,Wanna One - Energetic MV (Male),161051986,16638,blue,161.051986,161.051986,Wanna One - Energetic MV (Male),,,,,,???? (Energetic) MV
+33,Male,SHINee ,SHINee - Ring Ding Dong MV (Male),161021793,33233,blue,161.021793,161.021793,SHINee - Ring Ding Dong MV (Male),,,,,,Ring Ding Dong' MV
+34,Female,LE SSERAFIM,LE SSERAFIM - FEARLESS OFFICIAL M/V (Female),148122754,136715,red,148.122754,148.122754,LE SSERAFIM - FEARLESS OFFICIAL M/V (Female),,,,,,FEARLESS OFFICIAL M/V
+35,Female,Weeekly,Weeekly - After School MV (Female),14784446,357884,red,14.784446,14.784446,Weeekly - After School MV (Female),,,,,,After School
+36,Female,f(x),f(x) - Electric Shock MV (Female),140276936,8042,red,140.276936,140.276936,f(x) - Electric Shock MV (Female),,,,,,Electric Shock' MV
+37,Female,SISTAR,SISTAR - Music Video (Alone) (Female),138701524,20441,red,138.701524,138.701524,SISTAR - Music Video (Alone) (Female),,,,,,??? Music Video (Alone)
+38,Male,MONSTAX,MONSTAX - HERO Rooftop Ver. (Male),132264672,8373,blue,132.264672,132.264672,MONSTAX - HERO Rooftop Ver. (Male),,,,,,??? (HERO) Rooftop Ver.
+39,Female,IRENE & SEULGI,IRENE & SEULGI - Monster MV (Female),131870148,21438,red,131.870148,131.870148,IRENE & SEULGI - Monster MV (Female),,,,,,Monster' MV
+40,Male,NU'EST,NU'EST - FACE MV (Male),130499985,21155,blue,130.499985,130.499985,NU'EST - FACE MV (Male),,,,,,FACE(???)
+41,Male,NCT 2020,NCT 2020 - RESONANCE MV (Male),124167721,23124,blue,124.167721,124.167721,NCT 2020 - RESONANCE MV (Male),,,,,,RESONANCE' MV
+42,Female,Wonder Girls,Wonder Girls - NOBODY (Eng. Ver) M/V (Female),123562948,27953,red,123.562948,123.562948,Wonder Girls - NOBODY (Eng. Ver) M/V (Female),,,,,,"""NOBODY (Eng. Ver)"" M/V"
+43,Co-ed,Trouble Maker,Trouble Maker - Trouble Maker M/V (Mixed),122544462,23521,green,122.544462,122.544462,Trouble Maker - Trouble Maker M/V (Mixed),,,,,,Trouble Maker' M/V
+44,Male,SuperM ,SuperM - Jopping MV (Male),122125606,14841,blue,122.125606,122.125606,SuperM - Jopping MV (Male),,,,,,?Jopping? MV
+45,Male,BEAST ,BEAST - FICTION (Official Music Video) (Male),121443326,29077,blue,121.443326,121.443326,BEAST - FICTION (Official Music Video) (Male),,,,,,FICTION' (Official Music Video)
+47,Male,X1,X1 - FLASH MV (Male),12040247,36998,blue,12.040247,12.040247,X1 - FLASH MV (Male),,,,,,FLASH' MV
+48,Female,BOL4,BOL4 - Some MV (Female),119274272,39306,red,119.274272,119.274272,BOL4 - Some MV (Female),,,,,,Some(? ???)
+49,Female,KARA ,KARA - STEP M/V (Female),119223814,20870,red,119.223814,119.223814,KARA - STEP M/V (Female),,,,,,STEP M/V
+50,Female,EXID,EXID - (UP&DOWN) MV (Female),118898194,11224,red,118.898194,118.898194,EXID - (UP&DOWN) MV (Female),,,,,,???' (UP&DOWN) MV
+51,Female,SISTAR19,SISTAR19 - Ma Boy Music Video (Female),115630854,23989,red,115.630854,115.630854,SISTAR19 - Ma Boy Music Video (Female),,,,,,Ma Boy Music Video
